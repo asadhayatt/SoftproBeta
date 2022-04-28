@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="10dp"
+            android:elevation="10dp"
+            android:layout_margin="10dp"
+            >
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/headpan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Add New Product"
+                    android:textStyle="bold"
+                    android:textSize="22dp"
+                    android:textAlignment="center"
+                    />
+                <TextView
+                    android:id="@+id/prTV"
+                    android:layout_below="@+id/headpan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Name: "
+                    android:textSize="14dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_alignBaseline="@+id/prET"
+                    />
+
+                <EditText
+                    android:id="@+id/prET"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/headpan"
+                    android:layout_toRightOf="@+id/prTV" />
+
+                <TextView
+                    android:id="@+id/srateTV"
+                    android:layout_below="@+id/prTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" Rate: "
+                    android:textSize="14dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_alignBaseline="@+id/srateET"
+                    />
+                <EditText
+                    android:id="@+id/srateET"
+                    android:layout_below="@+id/prET"
+                    android:layout_toRightOf="@+id/prTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/instockTV"
+                    android:layout_below="@+id/srateTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" Stock: "
+                    android:textSize="14dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_alignBaseline="@+id/instockET"
+                    />
+                <EditText
+                    android:id="@+id/instockET"
+                    android:layout_below="@+id/srateET"
+                    android:layout_toRightOf="@+id/srateTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/desTV"
+                    android:layout_below="@+id/instockTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" Description: "
+                    android:textSize="14dp"
+                    android:layout_marginTop="10dp"
+                    />
+                <EditText
+                    android:id="@+id/desET"
+                    android:layout_below="@+id/desTV"
+                    android:layout_toRightOf="@+id/srateTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+
+</RelativeLayout>
