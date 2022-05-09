@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProductlistActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/top"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="@color/cry"
+                android:orientation="vertical">
+
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorPrimary"
+                    android:padding="5dp"
+                    android:text="Purchase List"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorBlackText"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/ET_dt"
+                    android:textSize="16dp"
+                    android:hint="Select Date"
+                    android:focusable="false"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginEnd="32dp"/>
+
+                <Button
+                    android:id="@+id/show_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginEnd="32dp"
+                    android:text="OK"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+
+            <ScrollView
+                android:id="@+id/container"
+                android:layout_below="@id/top"
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent">
+
+                <LinearLayout
+                    android:id="@+id/containerlay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+
+                </LinearLayout>
+
+
+            </ScrollView>
+
+        </RelativeLayout>
+    </LinearLayout>
+
+</androidx.appcompat.widget.LinearLayoutCompat>
