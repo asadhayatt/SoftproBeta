@@ -1,0 +1,98 @@
+[
+    {
+        "merged": "C:\\Users\\HAYAT10\\AndroidStudioProjects\\ANDROID SYLLABUS\\StockProBeta\\app\\build\\intermediates\\incremental\\mergeReleaseResources\\stripped.dir\\layout\\activity_dashboard2.xml",
+        "source": "C:\\Users\\HAYAT10\\AndroidStudioProjects\\ANDROID SYLLABUS\\StockProBeta\\app\\src\\main\\res\\layout\\activity_dashboard2.xml"
+    },
+    {
+        "merged": "C:\\Users\\HAYAT10\\AndroidStudioProjects\\ANDROID SYLLABUS\\StockProBeta\\app\\build\\intermediates\\incremental\\mergeReleaseResources\\stripped.dir\\layout\\activity_expense_list.xml",
+        "source": "C:\\Users\\HAYAT10\\AndroidStudioProjects\\ANDROID SYLLABUS\\StockProBeta\\app\\src\\main\\res\\layout\\activity_expense_list.xml"
+    },
+    {
+        "merged": "C:\\Users\\HAYAT10\\AndroidStudioProjects\\ANDROID SYLLABUS\\StockProBeta\\app\\build\\intermediates\\incremental\\mergeReleaseResources\\stripped.dir\\layout\\activity_purchaselist.xml",
+        "source": "C:\\Users\\HAYAT10\\AndroidStudioProjects\\ANDROID SYLLABUS\\StockProBeta\\app\\src\\main\\res\\layout\\activity_purchaselist.xml"
+    },
+    {
+        "merged": "C:\\Users\\HAYAT10\\AndroidStudioProjects\\ANDROID SYLLABUS\\StockProBeta\\app\\build\\intermediates\\incremental\\mergeReleaseResources\\stripped.dir\\layout\\activity_addorder.xml",
+        "source": "C:\\Users\\HAYAT10\\AndroidStudioProjects\\ANDROID SYLLABUS\\StockProBeta\\app\\src\\main\\res\\layout\\activity_addorder.xml"
+    },
+    {
+        "merged": "C:\\Users\\HAYAT10\\AndroidStudioProjects\\ANDROID SYLLABUS\\StockProBeta\\app\\build\\intermediates\\incremental\\mergeReleaseResources\\stripped.dir\\layout\\addproduct2.xml",
+        "source": "C:\\Users\\HAYAT10\\AndroidStudioProjects\\ANDROID SYLLABUS\\StockProBeta\\app\\src\\main\\res\\layout\\addproduct2.xml"
+    },
+    {
+        "merged": "C:\\Users\\HAYAT10\\AndroidStudioProjects\\ANDROID SYLLABUS\\StockProBeta\\app\\build\\intermediates\\incremental\\mergeReleaseResources\\stripped.dir\\layout\\activity_addpurchase.xml",
+        "source": "C:\\Users\\HAYAT10\\AndroidStudioProjects\\ANDROID SYLLABUS\\StockProBeta\\app\\src\\main\\res\\layout\\activity_addpurchase.xml"
+    },
+    {
+        "merged": "C:\\Users\\HAYAT10\\AndroidStudioProjects\\ANDROID SYLLABUS\\StockProBeta\\app\\build\\intermediates\\incremental\\mergeReleaseResources\\stripped.dir\\layout\\activity_stocklist.xml",
+        "source": "C:\\Users\\HAYAT10\\AndroidStudioProjects\\ANDROID SYLLABUS\\StockProBeta\\app\\src\\main\\res\\layout\\activity_stocklist.xml"
+    },
+    {
+        "merged": "C:\\Users\\HAYAT10\\AndroidStudioProjects\\ANDROID SYLLABUS\\StockProBeta\\app\\build\\intermediates\\incremental\\mergeReleaseResources\\stripped.dir\\layout\\custom_stocklist.xml",
+        "source": "C:\\Users\\HAYAT10\\AndroidStudioProjects\\ANDROID SYLLABUS\\StockProBeta\\app\\src\\main\\res\\layout\\custom_stocklist.xml"
+    },
+    {
+        "merged": "C:\\Users\\HAYAT10\\AndroidStudioProjects\\ANDROID SYLLABUS\\StockProBeta\\app\\build\\intermediates\\incremental\\mergeReleaseResources\\stripped.dir\\layout\\activity_view_order_list.xml",
+        "source": "C:\\Users\\HAYAT10\\AndroidStudioProjects\\ANDROID SYLLABUS\\StockProBeta\\app\\src\\main\\res\\layout\\activity_view_order_list.xml"
+    },
+    {
+        "merged": "C:\\Users\\HAYAT10\\AndroidStudioProjects\\ANDROID SYLLABUS\\StockProBeta\\app\\build\\intermediates\\incremental\\mergeReleaseResources\\stripped.dir\\layout\\activity_main.xml",
+        "source": "C:\\Users\\HAYAT10\\AndroidStudioProjects\\ANDROID SYLLABUS\\StockProBeta\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\HAYAT10\\AndroidStudioProjects\\ANDROID SYLLABUS\\StockProBeta\\app\\build\\intermediates\\incremental\\mergeReleaseResources\\stripped.dir\\layout\\activity_view_stock_list.xml",
+        "source": "C:\\Users\\HAYAT10\\AndroidStudioProjects\\ANDROID SYLLABUS\\StockProBeta\\app\\src\\main\\res\\layout\\activity_view_stock_list.xml"
+    },
+    {
+        "merged": "C:\\Users\\HAYAT10\\AndroidStudioProjects\\ANDROID SYLLABUS\\StockProBeta\\app\\build\\intermediates\\incremental\\mergeReleaseResources\\stripped.dir\\layout\\viewstocklist.xml",
+        "source": "C:\\Users\\HAYAT10\\AndroidStudioProjects\\ANDROID SYLLABUS\\StockProBeta\\app\\src\\main\\res\\layout\\viewstocklist.xml"
+    },
+    {
+        "merged": "C:\\Users\\HAYAT10\\AndroidStudioProjects\\ANDROID SYLLABUS\\StockProBeta\\app\\build\\intermediates\\incremental\\mergeReleaseResources\\stripped.dir\\layout\\testing.xml",
+        "source": "C:\\Users\\HAYAT10\\AndroidStudioProjects\\ANDROID SYLLABUS\\StockProBeta\\app\\src\\main\\res\\layout\\testing.xml"
+    },
+    {
+        "merged": "C:\\Users\\HAYAT10\\AndroidStudioProjects\\ANDROID SYLLABUS\\StockProBeta\\app\\build\\intermediates\\incremental\\mergeReleaseResources\\stripped.dir\\layout\\custom_listview_addpurchase_row.xml",
+        "source": "C:\\Users\\HAYAT10\\AndroidStudioProjects\\ANDROID SYLLABUS\\StockProBeta\\app\\src\\main\\res\\layout\\custom_listview_addpurchase_row.xml"
+    },
+    {
+        "merged": "C:\\Users\\HAYAT10\\AndroidStudioProjects\\ANDROID SYLLABUS\\StockProBeta\\app\\build\\intermediates\\incremental\\mergeReleaseResources\\stripped.dir\\layout\\activity_productlist.xml",
+        "source": "C:\\Users\\HAYAT10\\AndroidStudioProjects\\ANDROID SYLLABUS\\StockProBeta\\app\\src\\main\\res\\layout\\activity_productlist.xml"
+    },
+    {
+        "merged": "C:\\Users\\HAYAT10\\AndroidStudioProjects\\ANDROID SYLLABUS\\StockProBeta\\app\\build\\intermediates\\incremental\\mergeReleaseResources\\stripped.dir\\layout\\activity_date.xml",
+        "source": "C:\\Users\\HAYAT10\\AndroidStudioProjects\\ANDROID SYLLABUS\\StockProBeta\\app\\src\\main\\res\\layout\\activity_date.xml"
+    },
+    {
+        "merged": "C:\\Users\\HAYAT10\\AndroidStudioProjects\\ANDROID SYLLABUS\\StockProBeta\\app\\build\\intermediates\\incremental\\mergeReleaseResources\\stripped.dir\\layout\\expense.xml",
+        "source": "C:\\Users\\HAYAT10\\AndroidStudioProjects\\ANDROID SYLLABUS\\StockProBeta\\app\\src\\main\\res\\layout\\expense.xml"
+    },
+    {
+        "merged": "C:\\Users\\HAYAT10\\AndroidStudioProjects\\ANDROID SYLLABUS\\StockProBeta\\app\\build\\intermediates\\incremental\\mergeReleaseResources\\stripped.dir\\layout\\activity_dashboard.xml",
+        "source": "C:\\Users\\HAYAT10\\AndroidStudioProjects\\ANDROID SYLLABUS\\StockProBeta\\app\\src\\main\\res\\layout\\activity_dashboard.xml"
+    },
+    {
+        "merged": "C:\\Users\\HAYAT10\\AndroidStudioProjects\\ANDROID SYLLABUS\\StockProBeta\\app\\build\\intermediates\\incremental\\mergeReleaseResources\\stripped.dir\\layout\\product.xml",
+        "source": "C:\\Users\\HAYAT10\\AndroidStudioProjects\\ANDROID SYLLABUS\\StockProBeta\\app\\src\\main\\res\\layout\\product.xml"
+    },
+    {
+        "merged": "C:\\Users\\HAYAT10\\AndroidStudioProjects\\ANDROID SYLLABUS\\StockProBeta\\app\\build\\intermediates\\incremental\\mergeReleaseResources\\stripped.dir\\layout\\expenselist.xml",
+        "source": "C:\\Users\\HAYAT10\\AndroidStudioProjects\\ANDROID SYLLABUS\\StockProBeta\\app\\src\\main\\res\\layout\\expenselist.xml"
+    },
+    {
+        "merged": "C:\\Users\\HAYAT10\\AndroidStudioProjects\\ANDROID SYLLABUS\\StockProBeta\\app\\build\\intermediates\\incremental\\mergeReleaseResources\\stripped.dir\\layout\\activity_salelist.xml",
+        "source": "C:\\Users\\HAYAT10\\AndroidStudioProjects\\ANDROID SYLLABUS\\StockProBeta\\app\\src\\main\\res\\layout\\activity_salelist.xml"
+    },
+    {
+        "merged": "C:\\Users\\HAYAT10\\AndroidStudioProjects\\ANDROID SYLLABUS\\StockProBeta\\app\\build\\intermediates\\incremental\\mergeReleaseResources\\stripped.dir\\layout\\addproduct.xml",
+        "source": "C:\\Users\\HAYAT10\\AndroidStudioProjects\\ANDROID SYLLABUS\\StockProBeta\\app\\src\\main\\res\\layout\\addproduct.xml"
+    },
+    {
+        "merged": "C:\\Users\\HAYAT10\\AndroidStudioProjects\\ANDROID SYLLABUS\\StockProBeta\\app\\build\\intermediates\\incremental\\mergeReleaseResources\\stripped.dir\\layout\\activity_orderlist.xml",
+        "source": "C:\\Users\\HAYAT10\\AndroidStudioProjects\\ANDROID SYLLABUS\\StockProBeta\\app\\src\\main\\res\\layout\\activity_orderlist.xml"
+    },
+    {
+        "merged": "C:\\Users\\HAYAT10\\AndroidStudioProjects\\ANDROID SYLLABUS\\StockProBeta\\app\\build\\intermediates\\incremental\\mergeReleaseResources\\stripped.dir\\layout\\custom_orderlist.xml",
+        "source": "C:\\Users\\HAYAT10\\AndroidStudioProjects\\ANDROID SYLLABUS\\StockProBeta\\app\\src\\main\\res\\layout\\custom_orderlist.xml"
+    }
+]

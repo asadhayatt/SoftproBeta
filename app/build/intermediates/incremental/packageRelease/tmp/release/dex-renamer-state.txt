@@ -1,0 +1,4 @@
+#Tue Apr 26 15:47:32 PKT 2022
+base.0=C\:\\Users\\HAYAT10\\AndroidStudioProjects\\ANDROID SYLLABUS\\StockProBeta\\app\\build\\intermediates\\dex\\release\\minifyReleaseWithR8\\classes.dex
+renamed.0=classes.dex
+path.0=classes.dex
