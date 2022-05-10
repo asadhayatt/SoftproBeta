@@ -3,98 +3,123 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@drawable/mainmenu2">
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="10dp"
-            android:elevation="10dp"
             android:layout_margin="10dp"
-            >
+            android:elevation="10dp"
+            app:cardCornerRadius="10dp">
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@color/backgroundColor"
                 android:padding="10dp">
 
                 <TextView
                     android:id="@+id/headpan"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/alatsi"
                     android:text="Add New Product"
-                    android:textStyle="bold"
-                    android:textSize="22dp"
                     android:textAlignment="center"
-                    />
+                    android:textColor="#FFFF9800"
+                    android:textSize="22dp"
+                    android:textStyle="bold" />
+
                 <TextView
                     android:id="@+id/prTV"
-                    android:layout_below="@+id/headpan"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Name: "
-                    android:textSize="14dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_below="@+id/headpan"
                     android:layout_alignBaseline="@+id/prET"
-                    />
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/alatsi"
+                    android:text="Name: "
+                    android:textColor="@color/black"
+                    android:textSize="14dp" />
 
                 <EditText
                     android:id="@+id/prET"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/headpan"
-                    android:layout_toRightOf="@+id/prTV" />
+                    android:layout_toRightOf="@+id/prTV"
+                    android:background="@drawable/bg_edittext"
+                    android:padding="5dp" />
 
                 <TextView
                     android:id="@+id/srateTV"
-                    android:layout_below="@+id/prTV"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text=" Rate: "
-                    android:textSize="14dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_below="@+id/prTV"
                     android:layout_alignBaseline="@+id/srateET"
-                    />
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/alatsi"
+                    android:textColor="@color/black"
+                    android:text=" Rate: "
+                    android:textSize="14dp" />
+
                 <EditText
                     android:id="@+id/srateET"
-                    android:layout_below="@+id/prET"
-                    android:layout_toRightOf="@+id/prTV"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/prET"
+                    android:layout_marginTop="10dp"
+                    android:layout_toRightOf="@+id/prTV"
+                    android:background="@drawable/bg_edittext"
+                    android:padding="5dp" />
 
                 <TextView
                     android:id="@+id/instockTV"
-                    android:layout_below="@+id/srateTV"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text=" Stock: "
-                    android:textSize="14dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_below="@+id/srateTV"
                     android:layout_alignBaseline="@+id/instockET"
-                    />
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/alatsi"
+                    android:text="Stock:"
+                    android:textColor="@color/black"
+                    android:textSize="14dp" />
+
                 <EditText
                     android:id="@+id/instockET"
-                    android:layout_below="@+id/srateET"
-                    android:layout_toRightOf="@+id/srateTV"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/srateET"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toRightOf="@+id/srateTV"
+                    android:background="@drawable/bg_edittext"
+                    android:padding="5dp" />
 
                 <TextView
                     android:id="@+id/desTV"
-                    android:layout_below="@+id/instockTV"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text=" Description: "
-                    android:textSize="14dp"
+                    android:layout_below="@+id/instockTV"
                     android:layout_marginTop="10dp"
-                    />
+                    android:fontFamily="@font/alatsi"
+                    android:textColor="@color/black"
+                    android:text=" Description: "
+                    android:textSize="14dp" />
+
                 <EditText
                     android:id="@+id/desET"
-                    android:layout_below="@+id/desTV"
-                    android:layout_toRightOf="@+id/srateTV"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/desTV"
+                    android:layout_marginTop="10dp"
+                    android:layout_toRightOf="@+id/srateTV"
+                    android:layout_marginStart="5dp"
+                    android:background="@drawable/bg_edittext"
+                    android:padding="5dp" />
 
 
             </RelativeLayout>

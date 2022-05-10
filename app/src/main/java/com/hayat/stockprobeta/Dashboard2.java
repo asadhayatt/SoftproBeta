@@ -16,6 +16,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -34,12 +35,15 @@ public class Dashboard2 extends AppCompatActivity implements DatePickerDialog.On
 
 
 
-    LinearLayout addproduct , addorder
-                , addpurchase , addsale
-                , addexpense, expenselist;
+    ImageButton addproduct , addorder
+                , addpurchase, addexpense;
+
+    ImageButton productlist1 , orderlist1
+            , purchaselist1 , reportlist
+            , expenseList1;
+
     static TextView productlist , orderlist
-                , purchaselist , salelist
-                , expenseList;
+                , purchaselist, expenseList;
 
     String procount,product="",sr="",stk="",des="",search="";
     DBHandler dbhandler;
@@ -67,19 +71,25 @@ public class Dashboard2 extends AppCompatActivity implements DatePickerDialog.On
         //For linear Layouts.
 
         addproduct  = findViewById(R.id.addproduct);
-        addorder    = findViewById(R.id.addOrder);
+        addorder    = findViewById(R.id.addOder);
         addpurchase =   findViewById(R.id.addPurchase);
-        addsale     =   findViewById(R.id.addSale);
         addexpense  =   findViewById(R.id.addExpense);
-        //expenselist  =  findViewById(R.id.expenseList);
 
-        //For TextViews Show list
+        //For Showlist ImageButton
+
+        productlist1  = findViewById(R.id.productlist1);
+        orderlist1    = findViewById(R.id.oderlist1);
+        purchaselist1 =   findViewById(R.id.purchaselist1);
+        expenseList1  =   findViewById(R.id.expenselist1);
+        reportlist  =   findViewById(R.id.report);
+
+
+        //For counting Textviews.
 
         productlist  = findViewById(R.id.productlist);
-        orderlist    = findViewById(R.id.orderlist);
+        orderlist    = findViewById(R.id.oderlist);
         purchaselist =   findViewById(R.id.purchaselist);
-        salelist     =   findViewById(R.id.salelist);
-        expenseList  =   findViewById(R.id.expenseList);
+        expenseList  =   findViewById(R.id.expenselist);
 
 
 
@@ -104,7 +114,7 @@ public class Dashboard2 extends AppCompatActivity implements DatePickerDialog.On
 //////////////////////////////////////////////////////////
 
         //Set OncLick Listener for 2 thing. 1 for Add(AddProduct) and 2 for show(productlist) list
-        productlist.setOnClickListener(new View.OnClickListener() {
+        productlist1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(),ProductlistActivity.class));
@@ -130,7 +140,7 @@ public class Dashboard2 extends AppCompatActivity implements DatePickerDialog.On
             }
         });
 
-        orderlist.setOnClickListener(new View.OnClickListener() {
+        orderlist1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(),OrderlistActivity.class));
@@ -139,7 +149,7 @@ public class Dashboard2 extends AppCompatActivity implements DatePickerDialog.On
 
 
         //Set OncLick Listener for 2 thing. 1 for Add(AddPurchase) and 2 for show(Purchaselist) list
-        purchaselist.setOnClickListener(new View.OnClickListener() {
+        purchaselist1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(), PurchaselistActivity.class));
@@ -158,7 +168,7 @@ public class Dashboard2 extends AppCompatActivity implements DatePickerDialog.On
             }
         });
 
-        salelist.setOnClickListener(new View.OnClickListener() {
+        reportlist.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(),SalelistActivity.class));
@@ -173,7 +183,7 @@ public class Dashboard2 extends AppCompatActivity implements DatePickerDialog.On
 
             }
         });
-        expenseList.setOnClickListener(new View.OnClickListener() {
+        expenseList1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Dashboard2.this,expenseList.class));
@@ -198,7 +208,7 @@ public class Dashboard2 extends AppCompatActivity implements DatePickerDialog.On
 
     private void builddialog() {
         AlertDialog.Builder builder= new AlertDialog.Builder(this);
-        View view=getLayoutInflater().inflate(R.layout.addproduct,null);
+        View view=getLayoutInflater().inflate(R.layout.addproduct2,null);
 
         prname=view.findViewById(R.id.prET);
         stock=view.findViewById(R.id.instockET);
@@ -207,7 +217,8 @@ public class Dashboard2 extends AppCompatActivity implements DatePickerDialog.On
 
         builder.setView(view);
         builder.setCancelable(false);
-        builder.setPositiveButton("Save", new DialogInterface.OnClickListener() {
+        builder.setPositiveButton("Save", new DialogInterface.OnClickListener()
+        {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 if(TextUtils.isEmpty(prname.getText()))
