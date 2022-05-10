@@ -37,7 +37,7 @@
             android:name=".ADDpurchase"
             android:exported="false" />
         <activity
-            android:name=".SalelistActivity"
+            android:name=".ReportActivity"
             android:exported="false" />
         <activity
             android:name=".PurchaselistActivity"
