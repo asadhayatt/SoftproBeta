@@ -201,7 +201,7 @@ public class Dashboard2 extends AppCompatActivity implements DatePickerDialog.On
 
     private void builddialog() {
         AlertDialog.Builder builder= new AlertDialog.Builder(this);
-        View view=getLayoutInflater().inflate(R.layout.addproduct2,null);
+        View view=getLayoutInflater().inflate(R.layout.addproduct,null);
 
         prname=view.findViewById(R.id.prET);
         stock=view.findViewById(R.id.instockET);

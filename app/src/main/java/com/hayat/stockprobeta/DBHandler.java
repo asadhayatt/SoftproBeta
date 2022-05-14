@@ -356,7 +356,7 @@ public class DBHandler  extends SQLiteOpenHelper
         // on below line we are passing all values
         // along with its key and value pair.
         values.put(BILLAMOUNT_COL, total);
-        values.put(BILLDATE_COL, getDateTime());
+        values.put(DATE_COL, getDateTime());
 
        // Cursor getTotalId = db.rawQuery("select id from STOCK_TABLE where BILLAMOUNT_COL = '"+total+"'",null);
 
@@ -836,5 +836,11 @@ public class DBHandler  extends SQLiteOpenHelper
         }
 
         return s;
+    }
+
+    public void get_Report(String category , String fromDate , String toDate)
+    {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor   =   db.rawQuery("SELECT * FROM "+PRODUCT_TABLE+" WHERE" +DATE_COL+ "BETWEEN" + fromDate + "AND"  +toDate , null);
     }
 }

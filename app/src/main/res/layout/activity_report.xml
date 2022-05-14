@@ -49,114 +49,85 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:padding="7dp"
+                        android:gravity="center"
                         android:orientation="horizontal">
 
                         <TextView
 
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Product Name:"
+                            android:layout_height="match_parent"
+                            android:text="Title: "
+                            android:gravity="center"
+                            android:layout_gravity="center"
                             android:textSize="14dp" />
 
                         <Spinner
                             android:id="@+id/nameET"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="#C3C3C3"
-                            android:padding="8dp" />
+                            android:layout_width="170dp"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/bg_edittext"
+                            android:drawSelectorOnTop="true"
+                            android:popupBackground="@drawable/mainmenu2"
+                            android:padding="4dp" />
 
 
                     </LinearLayout>
 
+
+
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:orientation="horizontal">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Quantity: "
+                            android:text="From: "
                             android:textSize="14dp" />
 
                         <EditText
-                            android:id="@+id/quantityET"
-                            android:layout_width="match_parent"
+                            android:id="@+id/frDate"
+                            android:layout_width="130dp"
                             android:layout_height="wrap_content"
-                            android:inputType="number" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="horizontal">
+                            android:inputType="date"
+                            android:focusable="false"/>
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Purchase Rate: "
+                            android:text="To: "
                             android:textSize="14dp" />
 
                         <EditText
-                            android:id="@+id/prateET"
-                            android:layout_width="match_parent"
+                            android:id="@+id/toDate"
+                            android:layout_width="150dp"
                             android:layout_height="wrap_content"
-                            android:inputType="number" />
+                            android:inputType="date"
+                            android:focusable="false"/>
 
                     </LinearLayout>
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginTop="2dp"
-                        android:background="#E3DFDF"
-                        android:orientation="horizontal">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="10dp"
-                            android:text="Total Stock"
-                            android:textSize="18sp" />
-
-                        <TextView
-                            android:id="@+id/totalStock"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="10dp"
-                            android:layout_marginRight="10dp"
-                            android:background="#DDDCDC"
-                            android:padding="10dp"
-                            android:text="00"
-                            android:textColor="@color/black"
-                            android:textSize="18sp" />
-
-                    </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center_horizontal"
+                        android:layout_height="50dp"
                         android:layout_marginTop="2dp"
-                        android:background="#E3DFDF"
+                        android:gravity="center"
                         android:orientation="horizontal">
 
                         <Button
-                            android:id="@+id/add"
+                            android:id="@+id/searchBtn"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_margin="10dp"
-                            android:text="ADD"
-                            android:textSize="18sp" />
+                            android:text="Seacrh"
 
-                        <Button
-                            android:id="@+id/save"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="10dp"
-                            android:text="SAVE"
-                            android:textSize="18sp" />
+                            android:drawableLeft="@drawable/ic_search"
+                           />
+
+
 
 
                     </LinearLayout>
@@ -174,7 +145,7 @@
                             android:layout_weight="1"
                             android:background="@drawable/backgroudn_stroke"
                             android:gravity="center"
-                            android:text="Name " />
+                            android:text="Date " />
 
                         <TextView
 
@@ -183,16 +154,7 @@
                             android:layout_weight="1"
                             android:background="@drawable/backgroudn_stroke"
                             android:gravity="center"
-                            android:text="Qty" />
-
-                        <TextView
-
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:background="@drawable/backgroudn_stroke"
-                            android:gravity="center"
-                            android:text="Rate" />
+                            android:text="Name" />
 
                         <TextView
 
@@ -204,13 +166,22 @@
                             android:text="Total" />
 
                         <TextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/backgroudn_stroke"
+                            android:gravity="center"
+                            android:text="Paid Rs" />
+
+                        <TextView
                             android:id="@+id/textView6"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:background="@drawable/backgroudn_stroke"
                             android:gravity="center"
-                            android:text="Delete" />
+                            android:text="Due Rs" />
                     </LinearLayout>
 
                     <LinearLayout

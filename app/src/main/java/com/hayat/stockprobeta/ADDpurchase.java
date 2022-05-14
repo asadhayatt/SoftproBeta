@@ -130,7 +130,7 @@ public class ADDpurchase extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
 
-                    if(cl.contains(spinnerName))
+                    if(cl.contains(spinnerName) )
                     {
                         Toast.makeText(ADDpurchase.this, "already exist", Toast.LENGTH_SHORT).show();
                     }

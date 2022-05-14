@@ -14,50 +14,52 @@
         <TextView
             android:id="@+id/customTV_name"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/backgroudn_stroke"
+            android:layout_height="20dp"
             android:layout_weight="1"
+            android:background="@drawable/backgroudn_stroke"
             android:gravity="center"
             android:textColor="@color/black"
-            android:text="TextView" />
+            android:text="Asad" />
 
         <TextView
             android:id="@+id/customTV_qty"
-            android:layout_width="70dp"
-            android:layout_height="wrap_content"
+            android:layout_width="50dp"
+            android:layout_height="20dp"
             android:background="@drawable/backgroudn_stroke"
             android:gravity="center"
             android:textColor="@color/black"
-            android:text="TextView" />
+            android:text="Qty" />
 
         <TextView
             android:id="@+id/customTV_rate"
-            android:layout_width="70dp"
+            android:layout_width="60dp"
+            android:layout_height="20dp"
             android:gravity="center"
             android:background="@drawable/backgroudn_stroke"
             android:textColor="@color/black"
-            android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:text="Rate" />
 
         <TextView
             android:id="@+id/customTV_total"
-            android:layout_width="70dp"
+            android:layout_width="60dp"
+            android:layout_height="20dp"
             android:gravity="center"
             android:background="@drawable/backgroudn_stroke"
             android:textColor="@color/black"
-            android:layout_height="wrap_content"
-            android:text="TextView" />
-        <TextView
-            
-            android:id="@+id/TV_tag"
-            android:visibility="invisible"
-            android:layout_height="wrap_content" android:layout_width="wrap_content"/>
+            android:text="Total" />
+
 
         <ImageView
             android:id="@+id/customImg_delete"
             android:layout_width="70dp"
-            android:layout_height="19dp"
+            android:layout_height="20dp"
             app:srcCompat="@drawable/delete"
             android:background="@drawable/backgroudn_stroke"/>
+        <TextView
+
+            android:id="@+id/TV_tag"
+            android:visibility="invisible"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"/>
     </LinearLayout>
 </LinearLayout>
