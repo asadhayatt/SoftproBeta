@@ -11,7 +11,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 public class View_OrderList extends AppCompatActivity {
-    TextView sid1 ,title1, date1 , Tstock;
+    TextView sid1 ,title1,contact1, date1 , Tstock;
     LinearLayout layout;
 
     @SuppressLint("WrongViewCast")
@@ -25,20 +25,23 @@ public class View_OrderList extends AppCompatActivity {
         Bundle bundle=getIntent().getExtras();
         if(bundle != null)
         {
-            String id , title , amount , date ;
+            String id , title, contact , amount , date ;
 
             id = bundle.getString("id");
             title = bundle.getString("title");
+            contact = bundle.getString("contact");
             amount = bundle.getString("amount");
             date = bundle.getString("date");
 
             sid1= findViewById(R.id.oID);
             title1= findViewById(R.id.oTitle);
+            contact1= findViewById(R.id.oContact);
             date1= findViewById(R.id.date2);
             Tstock= findViewById(R.id.Tstock1);
 
             sid1.setText(id);
             title1.setText(title);
+            contact1.setText(contact);
             date1.setText(date);
             Tstock.setText(amount);
 

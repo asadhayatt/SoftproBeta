@@ -31,10 +31,10 @@ public class Addorder extends AppCompatActivity {
     ArrayList cl=new ArrayList();//list which store indexes of all element.
     ArrayList dl= new ArrayList();//it stores deleted index.
 
-    EditText customerName , quantity ;
+    EditText customerName ,customerContact, quantity ;
     String DropdownPICKER;
     ArrayList<product_list> pl=new ArrayList<product_list>();
-    String spinnerName , salerate, orderTitle;
+    String spinnerName , salerate, orderTitle , orderContact;
     int currentStockPrice = 0;
     int totalStockPrice = 0;
 
@@ -46,10 +46,9 @@ public class Addorder extends AppCompatActivity {
         layout=findViewById(R.id.containerlay);
         spinner          = findViewById(R.id.nameET);
         customerName     = findViewById(R.id.customerName);
+        customerContact  = findViewById(R.id.customerContact);
         quantity         = findViewById(R.id.quantityET);
         totalStock       = findViewById(R.id.totalStock);
-        //listView         = findViewById(R.id.listView);
-
 
 
 
@@ -132,7 +131,7 @@ public class Addorder extends AppCompatActivity {
                 else {
 
 
-                    if (customerName.getText().toString().equals("") || quantity.getText().toString().equals("")) {
+                    if (customerName.getText().toString().equals("") || customerContact.getText().toString().equals("") || quantity.getText().toString().equals("")) {
                         Toast.makeText(Addorder.this, "invalid input", Toast.LENGTH_SHORT).show();
                     } else {
                         sRate = Integer.parseInt(salerate);
@@ -193,7 +192,9 @@ public class Addorder extends AppCompatActivity {
                 try {
                     res         =   Integer.parseInt(totalStock.getText().toString());
                     orderTitle  =   customerName.getText().toString().trim();
-                    String stockId   =    db.create_order(String.valueOf(res),orderTitle);
+                    orderContact  =   customerContact.getText().toString().trim();
+
+                    String stockId   =    db.create_order(String.valueOf(res),orderTitle,orderContact);
                     for (int a = 0; a < cl.size(); a++)
                     {
                         int matched = 0;
@@ -226,6 +227,7 @@ public class Addorder extends AppCompatActivity {
                 }
                 customerName.setText("");
                 totalStock.setText("");
+                customerContact.setText("");
 
             }
 

@@ -6,7 +6,9 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.widget.Toast;
 
+import java.io.FileNotFoundException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -15,8 +17,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
-public class DBHandler  extends SQLiteOpenHelper
-{
+public class DBHandler  extends SQLiteOpenHelper {
     private static final String DB_NAME = "softpro_sb";
 
     // below int is our database version
@@ -56,12 +57,12 @@ public class DBHandler  extends SQLiteOpenHelper
     // order table
     private static final String ORDER_COL = "ordertitle";
     private static final String ORDERID_COL = "orderid";
+    private static final String ORDERCONTACT_COL = "contact";
 
     // Expenses table
-    private static final String ExpenseAMOUNT_COL = "Amount";
-    private static final String ExpenseDesc_COL = "Des";
+    private static final String ExpenseAMOUNT_COL = "billamount";
+    private static final String ExpenseDesc_COL = "des";
     private static final String ExpenseDate_COL = "ExpDate";
-
 
 
     public DBHandler(Context context) {
@@ -69,13 +70,11 @@ public class DBHandler  extends SQLiteOpenHelper
     }
 
 
-
-
     @Override
     public void onCreate(SQLiteDatabase db) {
 
 
-        String query="";
+        String query = "";
         query = "CREATE TABLE " + ACCOUNT_TABLE + " ("
                 + ID_COL + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + NAME_COL + " TEXT,"
@@ -97,7 +96,7 @@ public class DBHandler  extends SQLiteOpenHelper
 
         query = "CREATE TABLE " + STOCK_TABLE + " ("
                 + ID_COL + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-                + BILL_COL+ " TEXT,"
+                + BILL_COL + " TEXT,"
                 + BILLDATE_COL + " TEXT,"
                 + BILLAMOUNT_COL + " TEXT,"
                 + DATE_COL + " TEXT)";
@@ -105,7 +104,7 @@ public class DBHandler  extends SQLiteOpenHelper
 
         query = "CREATE TABLE " + STOCKLIST_TABLE + " ("
                 + ID_COL + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-                + STOCKID_COL+ " TEXT,"
+                + STOCKID_COL + " TEXT,"
                 + PRODUCTID_COL + " TEXT,"
                 + PRATE_COL + " TEXT,"
                 + QTY_COL + " TEXT,"
@@ -114,15 +113,15 @@ public class DBHandler  extends SQLiteOpenHelper
 
         query = "CREATE TABLE " + ORDER_TABLE + " ("
                 + ID_COL + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-                + ORDER_COL+ " TEXT,"
-                + DES_COL + " TEXT,"
+                + ORDER_COL + " TEXT,"
+                + ORDERCONTACT_COL + " TEXT,"
                 + BILLAMOUNT_COL + " TEXT,"
                 + DATE_COL + " TEXT)";
         db.execSQL(query);
 
         query = "CREATE TABLE " + ORDERLIST_TABLE + " ("
                 + ID_COL + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-                + ORDERID_COL+ " TEXT,"
+                + ORDERID_COL + " TEXT,"
                 + PRODUCTID_COL + " TEXT,"
                 + SRATE_COL + " TEXT,"
                 + QTY_COL + " TEXT,"
@@ -138,7 +137,6 @@ public class DBHandler  extends SQLiteOpenHelper
         db.execSQL(query);
 
 
-
     }
 
     public ArrayList<String> getData() {
@@ -146,10 +144,10 @@ public class DBHandler  extends SQLiteOpenHelper
 
         //hp = new HashMap();
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor res =  db.rawQuery( "select * from "+ ACCOUNT_TABLE, null );
+        Cursor res = db.rawQuery("select * from " + ACCOUNT_TABLE, null);
         ((Cursor) res).moveToFirst();
 
-        while(((Cursor) res).isAfterLast() == false){
+        while (((Cursor) res).isAfterLast() == false) {
             array_list.add(res.getString(res.getColumnIndex(NAME_COL)));
             array_list.add(res.getString(res.getColumnIndex(ORG_COL)));
             res.moveToNext();
@@ -162,10 +160,10 @@ public class DBHandler  extends SQLiteOpenHelper
 
 
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor res =  db.rawQuery( "select * from "+ STOCKLIST_TABLE, null );
+        Cursor res = db.rawQuery("select * from " + STOCKLIST_TABLE, null);
         res.moveToFirst();
 
-        while(res.isAfterLast() == false){
+        while (res.isAfterLast() == false) {
 
             array_list.add(res.getString(res.getColumnIndex(PRODUCTID_COL)));
             array_list.add(res.getString(res.getColumnIndex(PRATE_COL)));
@@ -184,10 +182,10 @@ public class DBHandler  extends SQLiteOpenHelper
 
         //hp = new HashMap();
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor res =  db.rawQuery( "select * from "+ PRODUCT_TABLE, null );
+        Cursor res = db.rawQuery("select * from " + PRODUCT_TABLE, null);
         res.moveToFirst();
 
-        while(res.isAfterLast() == false){
+        while (res.isAfterLast() == false) {
 
             array_list.add(res.getString(res.getColumnIndex(NAME_COL)));
             array_list.add(res.getString(res.getColumnIndex(SRATE_COL)));
@@ -216,8 +214,7 @@ public class DBHandler  extends SQLiteOpenHelper
 
     }
 
-    public void create(String name, String date, String org, String status)
-    {
+    public void create(String name, String date, String org, String status) {
 
         // on below line we are creating a variable for
         // our sqlite database and calling writable method
@@ -260,40 +257,32 @@ public class DBHandler  extends SQLiteOpenHelper
     }
 
 
-
-
-    public String getProductID(String name)
-    {
-
-
+    public String getProductID(String name) {
 
 
         SQLiteDatabase db = this.getReadableDatabase();
-        String id="0";
-        Cursor res =  db.rawQuery( "select id from products where "+NAME_COL+"='"+name+"'" , null );
+        String id = "0";
+        Cursor res = db.rawQuery("select id from products where " + NAME_COL + "='" + name + "'", null);
         res.moveToFirst();
 
-        while(res.isAfterLast() == false){
-            id=res.getString(res.getColumnIndex("id"));
+        while (res.isAfterLast() == false) {
+            id = res.getString(res.getColumnIndex("id"));
             res.moveToNext();
         }
         return id;
 
     }
 
-    public String getpro_stock(String pid)
-    {
-
-
+    public String getpro_stock(String pid) {
 
 
         SQLiteDatabase db = this.getReadableDatabase();
-        String stock="0";
-        Cursor res =  db.rawQuery( "select stock from products where id='"+pid+"'" , null );
+        String stock = "0";
+        Cursor res = db.rawQuery("select stock from products where id='" + pid + "'", null);
         res.moveToFirst();
 
-        while(res.isAfterLast() == false){
-            stock=res.getString(res.getColumnIndex("stock"));
+        while (res.isAfterLast() == false) {
+            stock = res.getString(res.getColumnIndex("stock"));
             res.moveToNext();
         }
         return stock;
@@ -301,39 +290,34 @@ public class DBHandler  extends SQLiteOpenHelper
     }
 
 
-
-    public String getOrderID()
-    {
-
+    public String getOrderID() {
 
 
         //hp = new HashMap();
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor res =  db.rawQuery( "select id from orders ORDER BY id   DESC LIMIT 1" , null );
-        String id="0";
+        Cursor res = db.rawQuery("select id from orders ORDER BY id   DESC LIMIT 1", null);
+        String id = "0";
         res.moveToFirst();
 
-        while(res.isAfterLast() == false){
-            id=res.getString(res.getColumnIndex("id"));
+        while (res.isAfterLast() == false) {
+            id = res.getString(res.getColumnIndex("id"));
             res.moveToNext();
         }
         return id;
 
     }
 
-    public String getStockID()
-    {
-
+    public String getStockID() {
 
 
         //hp = new HashMap();
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor res =  db.rawQuery( "select id from stocks ORDER BY id   DESC LIMIT 1" , null );
-        String id="0";
+        Cursor res = db.rawQuery("select id from stocks ORDER BY id   DESC LIMIT 1", null);
+        String id = "0";
         res.moveToFirst();
 
-        while(res.isAfterLast() == false){
-            id=res.getString(res.getColumnIndex("id"));
+        while (res.isAfterLast() == false) {
+            id = res.getString(res.getColumnIndex("id"));
             res.moveToNext();
         }
         return id;
@@ -341,10 +325,7 @@ public class DBHandler  extends SQLiteOpenHelper
     }
 
 
-
-
-    public String create_stock(String total )
-    {
+    public String create_stock(String total) {
 
 
         SQLiteDatabase db = this.getWritableDatabase();
@@ -356,9 +337,9 @@ public class DBHandler  extends SQLiteOpenHelper
         // on below line we are passing all values
         // along with its key and value pair.
         values.put(BILLAMOUNT_COL, total);
-        values.put(DATE_COL, getDateTime());
+        values.put(DATE_COL, getDate());
 
-       // Cursor getTotalId = db.rawQuery("select id from STOCK_TABLE where BILLAMOUNT_COL = '"+total+"'",null);
+        // Cursor getTotalId = db.rawQuery("select id from STOCK_TABLE where BILLAMOUNT_COL = '"+total+"'",null);
 
         // after adding all values we are passing
         // content values to our table.
@@ -366,12 +347,12 @@ public class DBHandler  extends SQLiteOpenHelper
         // at last we are closing our
         // database after adding database.
         db.close();
-        String id=getStockID();
-       // return getTotalId.getColumnIndex("id");
+        String id = getStockID();
+        // return getTotalId.getColumnIndex("id");
         return id;
     }
-    public String create_order(String total , String orderTitle )
-    {
+
+    public String create_order(String total, String orderTitle, String contact) {
 
 
         SQLiteDatabase db = this.getWritableDatabase();
@@ -383,8 +364,9 @@ public class DBHandler  extends SQLiteOpenHelper
         // on below line we are passing all values
         // along with its key and value pair.
         values.put(BILLAMOUNT_COL, total);
-        values.put(DATE_COL, getDateTime());
+        values.put(DATE_COL, getDate());
         values.put(ORDER_COL, orderTitle);
+        values.put(ORDERCONTACT_COL, contact);
 
         // Cursor getTotalId = db.rawQuery("select id from STOCK_TABLE where BILLAMOUNT_COL = '"+total+"'",null);
 
@@ -394,44 +376,37 @@ public class DBHandler  extends SQLiteOpenHelper
         // at last we are closing our
         // database after adding database.
         db.close();
-        String id=getOrderID();
+        String id = getOrderID();
         // return getTotalId.getColumnIndex("id");
         return id;
     }
 
     ////////////////////////////////////////////////////////////////////////
 
-    public void update_order(String pid, String qty)
-    {
-        String s=getpro_stock(pid);
-        String t=String.valueOf(Integer.parseInt(s)-Integer.parseInt(qty));
+    public void update_order(String pid, String qty) {
+        String s = getpro_stock(pid);
+        String t = String.valueOf(Integer.parseInt(s) - Integer.parseInt(qty));
         SQLiteDatabase db = this.getReadableDatabase();
 
-        String strSQL = "UPDATE products SET stock='"+t+"' WHERE id='"+pid+"'";
+        String strSQL = "UPDATE products SET stock='" + t + "' WHERE id='" + pid + "'";
         db.execSQL(strSQL);
-
-
 
 
     }
 
-    public void update_product(String pid, String qty)
-    {
-        String s=getpro_stock(pid);
-        String t=String.valueOf(Integer.parseInt(s)+Integer.parseInt(qty));
+    public void update_product(String pid, String qty) {
+        String s = getpro_stock(pid);
+        String t = String.valueOf(Integer.parseInt(s) + Integer.parseInt(qty));
         SQLiteDatabase db = this.getReadableDatabase();
 
-        String strSQL = "UPDATE products SET stock='"+t+"' WHERE id='"+pid+"'";
+        String strSQL = "UPDATE products SET stock='" + t + "' WHERE id='" + pid + "'";
         db.execSQL(strSQL);
-
-
 
 
     }
 
 
-    public void create_orderList(String orderid , String orderName, String rate, String qty, String total)
-    {
+    public void create_orderList(String orderid, String orderName, String rate, String qty, String total) {
 
         // on below line we are creating a variable for
         // our sqlite database and calling writable method
@@ -459,8 +434,7 @@ public class DBHandler  extends SQLiteOpenHelper
         db.close();
     }
 
-    public void create_stockList(String stockid , String stockName, String rate, String qty, String total)
-    {
+    public void create_stockList(String stockid, String stockName, String rate, String qty, String total) {
 
         // on below line we are creating a variable for
         // our sqlite database and calling writable method
@@ -516,54 +490,51 @@ public class DBHandler  extends SQLiteOpenHelper
         db.close();
     }
 
-    public String countStock()
-    {
-        String count="";
+    public String countStock() {
+        String count = "";
 
 
         //hp = new HashMap();
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor res =  db.rawQuery( "select count(*) AS pro from "+ STOCKLIST_TABLE, null );
+        Cursor res = db.rawQuery("select count(*) AS pro from " + STOCKLIST_TABLE, null);
         res.moveToFirst();
 
-        while(res.isAfterLast() == false){
-            count=res.getString(res.getColumnIndex("pro"));
+        while (res.isAfterLast() == false) {
+            count = res.getString(res.getColumnIndex("pro"));
             res.moveToNext();
         }
         return count;
 
     }
 
-    public String countproduct()
-    {
-        String count="";
+    public String countproduct() {
+        String count = "";
 
 
         //hp = new HashMap();
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor res =  db.rawQuery( "select count(*) AS pro from "+ PRODUCT_TABLE, null );
+        Cursor res = db.rawQuery("select count(*) AS pro from " + PRODUCT_TABLE, null);
         res.moveToFirst();
 
-        while(res.isAfterLast() == false){
-            count=res.getString(res.getColumnIndex("pro"));
+        while (res.isAfterLast() == false) {
+            count = res.getString(res.getColumnIndex("pro"));
             res.moveToNext();
         }
         return count;
 
     }
 
-    public String countExpense()
-    {
-        String count="";
+    public String countExpense() {
+        String count = "";
 
 
         //hp = new HashMap();
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor res =  db.rawQuery( "select count(*) AS pro from "+ EXPENSE_TABLE, null );
+        Cursor res = db.rawQuery("select count(*) AS pro from " + EXPENSE_TABLE, null);
         res.moveToFirst();
 
-        while(res.isAfterLast() == false){
-            count=res.getString(res.getColumnIndex("pro"));
+        while (res.isAfterLast() == false) {
+            count = res.getString(res.getColumnIndex("pro"));
             res.moveToNext();
         }
         return count;
@@ -573,18 +544,17 @@ public class DBHandler  extends SQLiteOpenHelper
 
     ///////////////////////////////////////////////////////////////////
 //Will change its parameters.
-    public String searchByStockId(String product)
-    {
-        String count="";
+    public String searchByStockId(String product) {
+        String count = "";
 
 
         //hp = new HashMap();
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor res =  db.rawQuery( "select count(*) AS pro from "+ PRODUCT_TABLE+" where "+NAME_COL+"='"+product+"'", null );
+        Cursor res = db.rawQuery("select count(*) AS pro from " + PRODUCT_TABLE + " where " + NAME_COL + "='" + product + "'", null);
         res.moveToFirst();
 
-        while(res.isAfterLast() == false){
-            count=res.getString(res.getColumnIndex("pro"));
+        while (res.isAfterLast() == false) {
+            count = res.getString(res.getColumnIndex("pro"));
             res.moveToNext();
         }
         return count;
@@ -592,31 +562,28 @@ public class DBHandler  extends SQLiteOpenHelper
     }
 
     ///////////////////////////////////////////////////////////////////
-    public String searchproduct(String product)
-    {
-        String count="";
+    public String searchproduct(String product) {
+        String count = "";
 
 
         //hp = new HashMap();
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor res =  db.rawQuery( "select count(*) AS pro from "+ PRODUCT_TABLE+" where "+NAME_COL+"='"+product+"'", null );
+        Cursor res = db.rawQuery("select count(*) AS pro from " + PRODUCT_TABLE + " where " + NAME_COL + "='" + product + "'", null);
         res.moveToFirst();
 
-        while(res.isAfterLast() == false){
-            count=res.getString(res.getColumnIndex("pro"));
+        while (res.isAfterLast() == false) {
+            count = res.getString(res.getColumnIndex("pro"));
             res.moveToNext();
         }
         return count;
 
     }
 
-    public void productlist()
-    {
+    public void productlist() {
         SQLiteDatabase db = this.getReadableDatabase();
     }
 
-    public void delproduct(String id)
-    {
+    public void delproduct(String id) {
 
         SQLiteDatabase db = this.getReadableDatabase();
         db.execSQL("DELETE FROM " + PRODUCT_TABLE + " WHERE " + ID_COL + "= '" + id + "'");
@@ -626,9 +593,7 @@ public class DBHandler  extends SQLiteOpenHelper
     }
 
 
-
-    public void delstocks(String id)
-    {
+    public void delstocks(String id) {
 
         SQLiteDatabase db = this.getReadableDatabase();
         db.execSQL("DELETE FROM " + PRODUCT_TABLE + " WHERE " + ID_COL + "= '" + id + "'");
@@ -638,16 +603,14 @@ public class DBHandler  extends SQLiteOpenHelper
     }
 
     @SuppressLint("Range")
-    public final List<String> getProduct_list()
-    {
+    public final List<String> getProduct_list() {
         ArrayList<String> list = new ArrayList<>();
 
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor  cursor    = db.rawQuery("select * from "+PRODUCT_TABLE,null);
+        Cursor cursor = db.rawQuery("select * from " + PRODUCT_TABLE, null);
         cursor.moveToFirst();
 
-        while(cursor.isAfterLast() ==  false)
-        {
+        while (cursor.isAfterLast() == false) {
             list.add(cursor.getString(cursor.getColumnIndex(NAME_COL)));
             list.add(cursor.getString(cursor.getColumnIndex(SRATE_COL)));
             cursor.moveToNext();
@@ -656,17 +619,15 @@ public class DBHandler  extends SQLiteOpenHelper
         return list;
     }
 
-    public  ArrayList<String>  Vieworder_list(String orderID)
-    {
+    public ArrayList<String> Vieworder_list(String orderID) {
         ArrayList<String> list = new ArrayList<>();
 
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery("select * from " + ORDERLIST_TABLE + " WHERE " + ORDERID_COL +"='"+orderID+"'", null);
+        Cursor cursor = db.rawQuery("select * from " + ORDERLIST_TABLE + " WHERE " + ORDERID_COL + "='" + orderID + "'", null);
         cursor.moveToFirst();
 
 
-        while(cursor.isAfterLast() ==  false)
-        {
+        while (cursor.isAfterLast() == false) {
             list.add(cursor.getString(cursor.getColumnIndex(PRODUCTID_COL)));
             list.add(cursor.getString(cursor.getColumnIndex(SRATE_COL)));
             list.add(cursor.getString(cursor.getColumnIndex(QTY_COL)));
@@ -677,17 +638,15 @@ public class DBHandler  extends SQLiteOpenHelper
         return list;
     }
 
-    public  ArrayList<String> Viewstock_list(String stockId)
-    {
+    public ArrayList<String> Viewstock_list(String stockId) {
         ArrayList<String> list = new ArrayList<>();
 
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery("select * from " + STOCKLIST_TABLE + " WHERE " + STOCKID_COL +"='"+stockId+"'", null);
+        Cursor cursor = db.rawQuery("select * from " + STOCKLIST_TABLE + " WHERE " + STOCKID_COL + "='" + stockId + "'", null);
         cursor.moveToFirst();
 
 
-        while(cursor.isAfterLast() ==  false)
-        {
+        while (cursor.isAfterLast() == false) {
             list.add(cursor.getString(cursor.getColumnIndex(PRODUCTID_COL)));
             list.add(cursor.getString(cursor.getColumnIndex(PRATE_COL)));
             list.add(cursor.getString(cursor.getColumnIndex(QTY_COL)));
@@ -698,19 +657,18 @@ public class DBHandler  extends SQLiteOpenHelper
         return list;
     }
 
-    public  ArrayList<String> getorder_list(String date)
-    {
+    public ArrayList<String> getorder_list(String date) {
         ArrayList<String> list = new ArrayList<>();
 
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor  cursor    = db.rawQuery("select * from "+ORDER_TABLE +" WHERE "+DATE_COL+" like '%"+date+"%'",null);
+        Cursor cursor = db.rawQuery("select * from " + ORDER_TABLE + " WHERE " + DATE_COL + " like '%" + date + "%'", null);
         cursor.moveToFirst();
 
 
-        while(cursor.isAfterLast() ==  false)
-        {
+        while (cursor.isAfterLast() == false) {
             list.add(cursor.getString(cursor.getColumnIndex(ID_COL)));
             list.add(cursor.getString(cursor.getColumnIndex(ORDER_COL)));
+            list.add(cursor.getString(cursor.getColumnIndex(ORDERCONTACT_COL)));
             list.add(cursor.getString(cursor.getColumnIndex(BILLAMOUNT_COL)));
             list.add(cursor.getString(cursor.getColumnIndex(DATE_COL)));
             cursor.moveToNext();
@@ -719,17 +677,15 @@ public class DBHandler  extends SQLiteOpenHelper
         return list;
     }
 
-    public  ArrayList<String> getExpense_list(String date)
-    {
+    public ArrayList<String> getExpense_list(String date) {
         ArrayList<String> list = new ArrayList<>();
 
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor  cursor    = db.rawQuery("select * from "+EXPENSE_TABLE +" WHERE "+ExpenseDate_COL+" like '%"+date+"%'",null);
+        Cursor cursor = db.rawQuery("select * from " + EXPENSE_TABLE + " WHERE " + ExpenseDate_COL + " like '%" + date + "%'", null);
         cursor.moveToFirst();
 
 
-        while(cursor.isAfterLast() ==  false)
-        {
+        while (cursor.isAfterLast() == false) {
             list.add(cursor.getString(cursor.getColumnIndex(ID_COL)));
             list.add(cursor.getString(cursor.getColumnIndex(ExpenseAMOUNT_COL)));
             list.add(cursor.getString(cursor.getColumnIndex(ExpenseDate_COL)));
@@ -740,20 +696,18 @@ public class DBHandler  extends SQLiteOpenHelper
         return list;
     }
 
-    public  ArrayList<String> getstock_list(String date)
-    {
+    public ArrayList<String> getstock_list(String date) {
         ArrayList<String> list = new ArrayList<>();
 
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor  cursor    = db.rawQuery("select * from "+STOCK_TABLE +" WHERE "+BILLDATE_COL+" like '%"+date+"%'",null);
+        Cursor cursor = db.rawQuery("select * from " + STOCK_TABLE + " WHERE " + DATE_COL + " like '%" + date + "%'", null);
         cursor.moveToFirst();
 
 
-        while(cursor.isAfterLast() ==  false)
-        {
+        while (cursor.isAfterLast() == false) {
             list.add(cursor.getString(cursor.getColumnIndex(ID_COL)));
             list.add(cursor.getString(cursor.getColumnIndex(BILLAMOUNT_COL)));
-            list.add(cursor.getString(cursor.getColumnIndex(BILLDATE_COL)));
+            list.add(cursor.getString(cursor.getColumnIndex(DATE_COL)));
             cursor.moveToNext();
 
         }
@@ -761,25 +715,24 @@ public class DBHandler  extends SQLiteOpenHelper
     }
 
 
-        @SuppressLint("Range")
-        public final List<String> product_list()
-        {
-            Map<Integer, String> hashMap = new HashMap<>();
-            ArrayList<String> list = new ArrayList<String>();
-            //ArrayList<String> idList = new ArrayList<String>();
+    @SuppressLint("Range")
+    public final List<String> product_list() {
+        Map<Integer, String> hashMap = new HashMap<>();
+        ArrayList<String> list = new ArrayList<String>();
+        //ArrayList<String> idList = new ArrayList<String>();
 
 
-              SQLiteDatabase db = this.getReadableDatabase();
-            Cursor cursor =  db.rawQuery( "select * from "+PRODUCT_TABLE, null );
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("select * from " + PRODUCT_TABLE, null);
 
-            cursor.moveToFirst();
+        cursor.moveToFirst();
 
-            while(cursor.isAfterLast() == false){
+        while (cursor.isAfterLast() == false) {
 
 
-                list.add(cursor.getString(cursor.getColumnIndex(NAME_COL)));
-                //list.add(cursor.getString(cursor.getColumnIndex(ID_COL)));
-                cursor.moveToNext();
+            list.add(cursor.getString(cursor.getColumnIndex(NAME_COL)));
+            //list.add(cursor.getString(cursor.getColumnIndex(ID_COL)));
+            cursor.moveToNext();
 
         }
         return list;
@@ -817,19 +770,16 @@ public class DBHandler  extends SQLiteOpenHelper
 
 
     @SuppressLint("Range")
-    public String getProduct_Name(String s)
-    {
-
+    public String getProduct_Name(String s) {
 
 
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor  cursor    = db.rawQuery("select * from "+PRODUCT_TABLE +" WHERE "+ID_COL+"='"+s+"'" ,null);
+        Cursor cursor = db.rawQuery("select * from " + PRODUCT_TABLE + " WHERE " + ID_COL + "='" + s + "'", null);
         cursor.moveToFirst();
 
 
-        while(cursor.isAfterLast() ==  false)
-        {
-            s   =   (cursor.getString(cursor.getColumnIndex(NAME_COL)));
+        while (cursor.isAfterLast() == false) {
+            s = (cursor.getString(cursor.getColumnIndex(NAME_COL)));
 
             cursor.moveToNext();
 
@@ -838,9 +788,92 @@ public class DBHandler  extends SQLiteOpenHelper
         return s;
     }
 
-    public void get_Report(String category , String fromDate , String toDate)
-    {
-        SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor   =   db.rawQuery("SELECT * FROM "+PRODUCT_TABLE+" WHERE" +DATE_COL+ "BETWEEN" + fromDate + "AND"  +toDate , null);
+    public ArrayList<String> get_Report(String category) {
+
+        if (category == "products") {
+            //To Do Code here
+
+            ArrayList<String> list = new ArrayList<>();
+
+            SQLiteDatabase db = this.getReadableDatabase();
+            Cursor cursor = db.rawQuery("select * from " + PRODUCT_TABLE, null);
+            cursor.moveToFirst();
+
+            while (cursor.isAfterLast() == false) {
+                list.add(cursor.getString(cursor.getColumnIndex(ID_COL)));
+                list.add(cursor.getString(cursor.getColumnIndex(NAME_COL)));
+                list.add(cursor.getString(cursor.getColumnIndex(SRATE_COL)));
+                list.add(cursor.getString(cursor.getColumnIndex(STOCK_COL)));
+                list.add(cursor.getString(cursor.getColumnIndex(DES_COL)));
+                cursor.moveToNext();
+
+            }
+
+
+            return list;
+        }
+        else if (category == "orders") {
+            //To Do Code here
+
+
+            ArrayList<String> list = new ArrayList<>();
+
+            SQLiteDatabase db = this.getReadableDatabase();
+            Cursor cursor = db.rawQuery("select * from " + ORDER_TABLE, null);
+            cursor.moveToFirst();
+
+            while (cursor.isAfterLast() == false) {
+                list.add(cursor.getString(cursor.getColumnIndex(ID_COL)));
+                list.add(cursor.getString(cursor.getColumnIndex(ORDER_COL)));
+                list.add(cursor.getString(cursor.getColumnIndex(ORDERCONTACT_COL)));
+                list.add(cursor.getString(cursor.getColumnIndex(BILLAMOUNT_COL)));
+                list.add(cursor.getString(cursor.getColumnIndex(DATE_COL)));
+                cursor.moveToNext();
+
+            }
+            return list;
+        }
+        else if (category == "expenses") {
+            //To Do Code here
+            ArrayList<String> list = new ArrayList<>();
+
+            SQLiteDatabase db = this.getReadableDatabase();
+            Cursor cursor = db.rawQuery("select * from " + EXPENSE_TABLE, null);
+            cursor.moveToFirst();
+
+            while (cursor.isAfterLast() == false) {
+                list.add(cursor.getString(cursor.getColumnIndex(ID_COL)));
+                list.add(cursor.getString(cursor.getColumnIndex(BILLAMOUNT_COL)));
+                list.add(cursor.getString(cursor.getColumnIndex(ExpenseDesc_COL)));
+                list.add(cursor.getString(cursor.getColumnIndex(ExpenseDate_COL)));
+                cursor.moveToNext();
+            }
+            return list;
+        }
+        else if (category == "stocks") {
+            //To Do Code here
+
+            ArrayList<String> list = new ArrayList<>();
+
+            SQLiteDatabase db = this.getReadableDatabase();
+            Cursor cursor = db.rawQuery("select * from " + STOCK_TABLE, null);
+            cursor.moveToFirst();
+
+            while (cursor.isAfterLast() == false) {
+                list.add(cursor.getString(cursor.getColumnIndex(ID_COL)));
+                list.add(cursor.getString(cursor.getColumnIndex(BILLAMOUNT_COL)));
+                list.add(cursor.getString(cursor.getColumnIndex(DATE_COL)));
+                cursor.moveToNext();
+            }
+
+            return list;
+        }
+        else if (category == "compiled") {
+            //To Do Code here
+            return null;
+        }
+        else {
+            return null;
+        }
     }
 }

@@ -64,6 +64,24 @@
                             android:inputType="textAutoCorrect" />
 
                     </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Order Contact: "
+                            android:textSize="14dp" />
+
+                        <EditText
+                            android:id="@+id/customerContact"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="number" />
+
+                    </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -119,7 +137,7 @@
                             android:layout_margin="10dp"
                             android:layout_gravity="center"
                             android:text="Total Stock"
-                            android:textSize="18sp" />
+                            android:textSize="14sp" />
 
                         <TextView
                             android:id="@+id/totalStock"
@@ -128,10 +146,10 @@
                             android:layout_margin="10dp"
                             android:layout_marginRight="10dp"
                             android:background="#DDDCDC"
-                            android:padding="10dp"
+
                             android:text="00"
                             android:textColor="@color/black"
-                            android:textSize="18sp" />
+                            android:textSize="14sp" />
 
                     </LinearLayout>
 

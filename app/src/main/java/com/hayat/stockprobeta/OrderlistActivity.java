@@ -64,7 +64,7 @@ public class OrderlistActivity extends AppCompatActivity implements DatePickerDi
 
 
     }
-    public void loadorderlist()
+    public void loadorderlist() throws IndexOutOfBoundsException
     {
 
         date=etdate.getText().toString();
@@ -80,6 +80,7 @@ public class OrderlistActivity extends AppCompatActivity implements DatePickerDi
 
                 TextView orderID      =   view.findViewById(R.id.orderID);
                 TextView orderTitile  =   view.findViewById(R.id.Otitle);
+                TextView orderContact  =   view.findViewById(R.id.OContact);
                 TextView Tamount      =   view.findViewById(R.id.Tamount);
                 TextView Bdate        =   view.findViewById(R.id.orderDate);
                 Button   viewBtn     =   view.findViewById(R.id.viewbtn);
@@ -87,13 +88,15 @@ public class OrderlistActivity extends AppCompatActivity implements DatePickerDi
 
                 orderID.setText(st.get(i));
                 orderTitile.setText(st.get(i+1));
-                Tamount.setText(st.get(i+2));
-                Bdate.setText(st.get(i+3));
+                orderContact.setText(st.get(i+2));
+                Tamount.setText(st.get(i+3));
+                Bdate.setText(st.get(i+4));
                 //Convert TextView into String.
-                String id ,title , amount , date ;
+                String id ,title , contact , amount , date ;
 
                 id=(orderID.getText().toString());
                 title=(orderTitile.getText().toString());
+                contact=(orderContact.getText().toString());
                 amount=(Tamount.getText().toString());
                 date=(Bdate.getText().toString());
                 viewBtn.setOnClickListener(new View.OnClickListener() {
@@ -102,6 +105,7 @@ public class OrderlistActivity extends AppCompatActivity implements DatePickerDi
                         Bundle bundle = new Bundle();
                         bundle.putString("id",id);
                         bundle.putString("title",title);
+                        bundle.putString("contact",contact);
                         bundle.putString("amount",amount);
                         bundle.putString("date",date);
 
@@ -121,7 +125,7 @@ public class OrderlistActivity extends AppCompatActivity implements DatePickerDi
         }
         catch (Exception e)
         {
-            Toast.makeText(this, ""+e.toString(), Toast.LENGTH_SHORT).show();
+            e.printStackTrace();
         }
 
 
