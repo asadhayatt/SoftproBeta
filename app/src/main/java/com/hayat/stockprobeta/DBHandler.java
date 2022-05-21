@@ -214,7 +214,7 @@ public class DBHandler  extends SQLiteOpenHelper {
 
     }
 
-    public void create(String name, String date, String org, String status) {
+    public void create(String name, String org, String status) {
 
         // on below line we are creating a variable for
         // our sqlite database and calling writable method
@@ -228,7 +228,7 @@ public class DBHandler  extends SQLiteOpenHelper {
         // on below line we are passing all values
         // along with its key and value pair.
         values.put(NAME_COL, name);
-        values.put(DATE_COL, date);
+        values.put(DATE_COL, getDateTime());
         values.put(STATUS_COL, status);
         values.put(ORG_COL, org);
 

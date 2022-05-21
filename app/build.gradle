@@ -52,6 +52,11 @@ dependencies {
     implementation 'com.itextpdf:itext7-core:7.1.8'
     implementation 'com.android.support:multidex:1.0.3'
 
+    //Passcode Dependencies
+    implementation 'com.hanks:passcodeview:0.1.2'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+
+
 
 
 }

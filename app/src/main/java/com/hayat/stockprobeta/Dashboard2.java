@@ -154,7 +154,7 @@ public class Dashboard2 extends AppCompatActivity implements DatePickerDialog.On
             @Override
             public void onClick(View v) {
 
-            startActivity(new Intent(getApplicationContext(),ADDpurchase.class));
+            startActivity(new Intent(getApplicationContext(),passcode_Activity.class));
 
 
             

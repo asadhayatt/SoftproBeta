@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
             name = array_list.get(0).toString();
             org = array_list.get(1).toString();
 
-            Intent intent = new Intent(MainActivity.this, Dashboard2    .class);
+            Intent intent = new Intent(MainActivity.this, Dashboard2.class);
             startActivity(intent);
             finish();
         }
@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void start(String name, String org) {
         try {
-            dbhandler.create(name, "20-12-2022", org, "0");
+            dbhandler.create(name,org,"0");
 
 
         } catch (Exception e) {
