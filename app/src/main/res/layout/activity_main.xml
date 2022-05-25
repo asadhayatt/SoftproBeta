@@ -115,6 +115,56 @@ tools:context=".MainActivity">
 
                 />
         </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/securityQ"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_marginLeft="10dp"
+                android:maxLength="14"
+                android:background="@drawable/edit_text"
+                android:drawableLeft="@drawable/ic_baseline_security_24"
+                android:drawablePadding="10dp"
+                android:gravity="center_vertical"
+                android:drawableRight="@drawable/hint"
+                android:hint="Create your backup code (i.e : teacher name, CNIC number, pet name, favourite city, etc.)"
+                android:padding="10dp"
+                android:textSize="14dp"
+                android:elevation="8dp"
+                android:paddingStart="8dp"
+
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/pinCode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_marginLeft="10dp"
+                android:inputType="number"
+                android:maxLength="5"
+                android:background="@drawable/edit_text"
+                android:drawableLeft="@drawable/ic_baseline_key_24"
+                android:drawablePadding="10dp"
+                android:gravity="center_vertical"
+                android:hint="Create your 5-digit pin code (i.e : 12345 )"
+                android:padding="10dp"
+                android:textSize="14dp"
+                android:elevation="8dp"
+                android:paddingStart="8dp"
+
+                />
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -126,7 +176,7 @@ tools:context=".MainActivity">
                 android:id="@+id/startbtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_margin="10dp"
                 android:background="@drawable/custom_button"
                 android:fontFamily="@font/alatsi"
                 android:text="Create"

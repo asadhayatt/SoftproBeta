@@ -9,7 +9,10 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -236,7 +239,7 @@ public class Dashboard2 extends AppCompatActivity implements DatePickerDialog.On
                     stock.setText("");
                     desc.setText("");
                     loadproduct();
-                    Toast.makeText(getApplicationContext(), "Product added successfully...", Toast.LENGTH_SHORT).show();
+                    Success_Toast(); //AddProduct Toast After Save a product
                 }
                 else if(check == 2)
                 {
@@ -263,6 +266,8 @@ public class Dashboard2 extends AppCompatActivity implements DatePickerDialog.On
 
         dialog=builder.create();
     }
+
+
 
     public void loadstocklist() {
 
@@ -430,7 +435,7 @@ public class Dashboard2 extends AppCompatActivity implements DatePickerDialog.On
                     date.setText("");
                     Edes.setText("");
                     loadExpense(); //it count the expense date
-                    Toast.makeText(getApplicationContext(), "Expense added successfully...", Toast.LENGTH_SHORT).show();
+                    Success_Toast1(); // AddExpense Toast after successfully adding expense
 
             }
         }).setNegativeButton("cancel", new DialogInterface.OnClickListener() {
@@ -463,4 +468,30 @@ public class Dashboard2 extends AppCompatActivity implements DatePickerDialog.On
         Toast.makeText(Dashboard2.this, ""+date, Toast.LENGTH_SHORT).show();
         //Edate.setText(date);
     }
+    private void Success_Toast() {
+
+        LayoutInflater inflater  = getLayoutInflater();
+        View layout =   inflater.inflate(R.layout.toast_addproduct,(ViewGroup) findViewById(R.id.ProductToast));
+
+        Toast toast =new Toast(Dashboard2.this);
+        toast.setView(layout);
+        toast.setDuration(toast.LENGTH_SHORT);
+        toast.setGravity(Gravity.CENTER_VERTICAL,0,0);
+        toast.show();
+
+    }
+    private void Success_Toast1() {
+
+        LayoutInflater inflater  = getLayoutInflater();
+        View layout =   inflater.inflate(R.layout.toast_expense,(ViewGroup) findViewById(R.id.ExpenseToast));
+
+        Toast toast =new Toast(Dashboard2.this);
+        toast.setView(layout);
+        toast.setDuration(toast.LENGTH_SHORT);
+        toast.setGravity(Gravity.CENTER_VERTICAL,0,0);
+        toast.show();
+
+    }
+
+
 }

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".forgot_pin">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/hint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:text="Enter your backup code (i.e : teacher name, CNIC number, pet name, favourite city, etc.)"
+                    android:layout_margin="5dp"
+                    android:gravity="center"
+                    android:textSize="12dp"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="#AEAEAE"/>
+
+                <EditText
+                    android:id="@+id/code"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:inputType="textAutoComplete"
+
+                    android:hint="Enter your backup code here"  />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/verify"
+                        android:layout_width="75dp"
+                        android:layout_height="40dp"
+                        android:text="verify"
+                        android:textSize="10dp"
+                        android:layout_gravity="center"/>
+
+                    <ImageButton
+                        android:id="@+id/hintSize"
+                        android:layout_width="20dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:src="@drawable/hint"
+                        android:backgroundTintMode="add"/>
+
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="40dp"
+                android:background="#171717"/>
+
+            <TextView
+                android:id="@+id/Pass_heading"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                android:text="Create a new 5-digit pin code."
+                android:gravity="center"
+                android:textColor="@color/black"/>
+
+            <EditText
+                android:id="@+id/password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:visibility="invisible"
+                android:inputType="number"
+                android:maxLength="5"
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                android:hint="New pin code"  />
+
+            <EditText
+                android:id="@+id/confirmP"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:inputType="number"
+                android:visibility="invisible"
+                android:maxLength="5"
+                android:layout_marginTop="10dp"
+                android:hint="Confirm new pin code"  />
+
+            <Button
+                android:id="@+id/submit"
+                android:layout_width="75dp"
+                android:layout_height="40dp"
+                android:visibility="invisible"
+                android:textSize="10dp"
+                android:text="submit"
+                android:layout_gravity="center"/>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

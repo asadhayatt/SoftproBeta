@@ -18,6 +18,7 @@ import java.util.Locale;
 import java.util.Map;
 
 public class DBHandler  extends SQLiteOpenHelper {
+
     private static final String DB_NAME = "softpro_sb";
 
     // below int is our database version
@@ -39,6 +40,8 @@ public class DBHandler  extends SQLiteOpenHelper {
     // account table
     private static final String ORG_COL = "org";
     private static final String STATUS_COL = "status";
+    private static final String SECURITY_COL = "security";
+    private static final String PIN_COL = "pin";
     // product table
 
     private static final String SRATE_COL = "srate";
@@ -80,7 +83,9 @@ public class DBHandler  extends SQLiteOpenHelper {
                 + NAME_COL + " TEXT,"
                 + ORG_COL + " TEXT,"
                 + DATE_COL + " TEXT,"
-                + STATUS_COL + " TEXT)";
+                + STATUS_COL + " TEXT,"
+                + SECURITY_COL + " TEXT,"
+                + PIN_COL + " TEXT)";
 
         // at last we are calling a exec sql
         // method to execute above sql query
@@ -214,7 +219,7 @@ public class DBHandler  extends SQLiteOpenHelper {
 
     }
 
-    public void create(String name, String org, String status) {
+    public void create(String name, String org, String status , String securityQ, String pinCode) {
 
         // on below line we are creating a variable for
         // our sqlite database and calling writable method
@@ -231,6 +236,8 @@ public class DBHandler  extends SQLiteOpenHelper {
         values.put(DATE_COL, getDateTime());
         values.put(STATUS_COL, status);
         values.put(ORG_COL, org);
+        values.put(SECURITY_COL, securityQ);
+        values.put(PIN_COL, pinCode);
 
         // after adding all values we are passing
         // content values to our table.
@@ -875,5 +882,47 @@ public class DBHandler  extends SQLiteOpenHelper {
         else {
             return null;
         }
+    }
+
+    public ArrayList<String> backup_code()
+    {
+        ArrayList <String> security = new ArrayList<>();
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("select * from " + ACCOUNT_TABLE, null);
+        cursor.moveToFirst();
+
+        while (cursor.isAfterLast() == false) {
+            security.add(cursor.getString(cursor.getColumnIndex(SECURITY_COL)));
+            security.add(cursor.getString(cursor.getColumnIndex(PIN_COL)));
+            cursor.moveToNext();
+        }
+
+
+        return security;
+    }
+
+    public void replace_pin(String pin)
+    {
+        // on below line we are creating a variable for
+        // our sqlite database and calling writable method
+        // as we are writing data in our database.
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        // on below line we are creating a
+        // variable for content values.
+        ContentValues values = new ContentValues();
+
+        // on below line we are passing all values
+        // along with its key and value pair.
+        values.put(PIN_COL, pin);
+
+
+        // after adding all values we are passing
+        // content values to our table.
+        db.update(ACCOUNT_TABLE,values,ID_COL+"="+1,null);
+
+        // at last we are closing our
+        // database after adding database.
+        db.close();
     }
 }

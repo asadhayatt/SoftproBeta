@@ -11,6 +11,8 @@ import android.graphics.Color;
 import android.icu.text.CaseMap;
 import android.os.Bundle;
 import android.os.Environment;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -26,6 +28,8 @@ import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.property.HorizontalAlignment;
+
+import org.w3c.dom.Text;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -117,9 +121,7 @@ public class ReportActivity extends AppCompatActivity implements DatePickerDialo
 
                         if(position > 0){
                             // Notify the selected item text
-                            Toast.makeText
-                                    (getApplicationContext(), "Selected : " + Title, Toast.LENGTH_SHORT)
-                                    .show();
+                            //Toast.makeText(getApplicationContext(), "Selected : " + Title, Toast.LENGTH_SHORT).show();
                         }
 //
                     }
@@ -477,7 +479,9 @@ public class ReportActivity extends AppCompatActivity implements DatePickerDialo
 
         document.add(table);
         document.close();
-        Toast.makeText(getApplicationContext(), file.toString()+ " created.", Toast.LENGTH_SHORT).show();
+        String path = file.toString();
+        Success_Toast(path);
+        //Toast.makeText(getApplicationContext(), file.toString()+ " created.", Toast.LENGTH_SHORT).show();
 
 
     }
@@ -518,7 +522,9 @@ public class ReportActivity extends AppCompatActivity implements DatePickerDialo
 
         document.add(table);
         document.close();
-        Toast.makeText(getApplicationContext(), file.toString()+ " created.", Toast.LENGTH_SHORT).show();
+        String path = file.toString();
+        Success_Toast(path);
+       // Toast.makeText(getApplicationContext(), file.toString()+ " created.", Toast.LENGTH_SHORT).show();
     }
 
     private void createEXPENSES() {
@@ -556,7 +562,9 @@ public class ReportActivity extends AppCompatActivity implements DatePickerDialo
 
         document.add(table);
         document.close();
-        Toast.makeText(getApplicationContext(), file.toString()+ " created.", Toast.LENGTH_SHORT).show();
+        String path = file.toString();
+        Success_Toast(path);
+        //Toast.makeText(getApplicationContext(), file.toString()+ " created.", Toast.LENGTH_SHORT).show();
         
     }
 
@@ -594,7 +602,9 @@ public class ReportActivity extends AppCompatActivity implements DatePickerDialo
 
         document.add(table);
         document.close();
-        Toast.makeText(getApplicationContext(), file.toString()+ " created.", Toast.LENGTH_SHORT).show();
+        String path = file.toString();
+        Success_Toast(path);
+        //Toast.makeText(getApplicationContext(), file.toString()+ " created.", Toast.LENGTH_SHORT).show();
         
     }
 
@@ -602,5 +612,22 @@ public class ReportActivity extends AppCompatActivity implements DatePickerDialo
 
         Toast.makeText(this, "In the Compiled", Toast.LENGTH_SHORT).show();
         
+    }
+
+    private void Success_Toast(String path) {
+
+        LayoutInflater inflater  = getLayoutInflater();
+        View layout =   inflater.inflate(R.layout.toast_report,(ViewGroup) findViewById(R.id.ReportToast));
+
+        TextView msg = layout.findViewById(R.id.storagePATH);
+
+        msg.setText(path);
+
+        Toast toast =new Toast(ReportActivity.this);
+        toast.setView(layout);
+        toast.setDuration(toast.LENGTH_LONG);
+        toast.setGravity(Gravity.CENTER_VERTICAL,0,0);
+        toast.show();
+
     }
 }

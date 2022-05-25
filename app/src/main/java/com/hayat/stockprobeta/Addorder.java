@@ -1,8 +1,12 @@
 package com.hayat.stockprobeta;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -212,7 +216,8 @@ public class Addorder extends AppCompatActivity {
 
 
                                 String ProId = db.getProductID(cl.get(a + 1).toString());
-                                Toast.makeText(Addorder.this, "Record addeded successfully.", Toast.LENGTH_SHORT).show();
+                                Success_Toast(); //After click on save button it appears as a Toast.
+                               // Toast.makeText(Addorder.this, "Record addeded successfully.", Toast.LENGTH_SHORT).show();
                                 db.create_orderList(stockId, ProId, cl.get(a + 2).toString(), cl.get(a + 3).toString(), cl.get(a + 4).toString());
                                 db.update_order(ProId, cl.get(a + 3).toString()); // Product id and qty passing.
 
@@ -228,6 +233,8 @@ public class Addorder extends AppCompatActivity {
                 customerName.setText("");
                 totalStock.setText("");
                 customerContact.setText("");
+                startActivity(new Intent(Addorder.this,Dashboard2.class));
+                finish();
 
             }
 
@@ -328,6 +335,18 @@ public class Addorder extends AppCompatActivity {
 //    }
 
 
+    private void Success_Toast() {
+
+        LayoutInflater inflater  = getLayoutInflater();
+        View layout =   inflater.inflate(R.layout.toast_order,(ViewGroup) findViewById(R.id.OrderToast));
+
+        Toast toast =new Toast(Addorder.this);
+        toast.setView(layout);
+        toast.setDuration(toast.LENGTH_SHORT);
+        toast.setGravity(Gravity.CENTER_VERTICAL,0,0);
+        toast.show();
+
+    }
 
 
 }

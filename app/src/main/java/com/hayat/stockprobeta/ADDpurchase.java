@@ -7,9 +7,11 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -214,7 +216,8 @@ public class ADDpurchase extends AppCompatActivity {
 
 
                                 String ProId   =    db.getProductID(cl.get(a+1).toString());
-                                Toast.makeText(ADDpurchase.this, "Recod addeded successfully.", Toast.LENGTH_SHORT).show();
+                                Success_Toast(); //Add Purchase add successfully toast after adding.
+                                //Toast.makeText(ADDpurchase.this, "Recod addeded successfully.", Toast.LENGTH_SHORT).show();
                                 db.create_stockList(stockId,ProId,cl.get(a+2).toString(),cl.get(a+3).toString(),cl.get(a+4).toString());
                                 db.update_product(ProId,cl.get(a+3).toString());
 
@@ -239,6 +242,8 @@ public class ADDpurchase extends AppCompatActivity {
 
                     totalStock.setText("");
 
+                    startActivity(new Intent(ADDpurchase.this,Dashboard2.class));
+                    finish();
 
                 }
 
@@ -341,5 +346,18 @@ public class ADDpurchase extends AppCompatActivity {
 
 
 
+
+    private void Success_Toast() {
+
+        LayoutInflater inflater  = getLayoutInflater();
+        View layout =   inflater.inflate(R.layout.toast_addpurchase,(ViewGroup) findViewById(R.id.PurchaseToast));
+
+        Toast toast =new Toast(ADDpurchase.this);
+        toast.setView(layout);
+        toast.setDuration(toast.LENGTH_SHORT);
+        toast.setGravity(Gravity.CENTER_VERTICAL,0,0);
+        toast.show();
+
+    }
 
 }

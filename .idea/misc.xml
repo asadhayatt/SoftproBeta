@@ -11,9 +11,10 @@
         <entry key="..\:/Users/HAYAT10/AndroidStudioProjects/ANDROID SYLLABUS/StockProBeta/app/src/main/res/layout/activity_dashboard.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/HAYAT10/AndroidStudioProjects/ANDROID SYLLABUS/StockProBeta/app/src/main/res/layout/activity_dashboard2.xml" value="0.22" />
         <entry key="..\:/Users/HAYAT10/AndroidStudioProjects/ANDROID SYLLABUS/StockProBeta/app/src/main/res/layout/activity_expense_list.xml" value="0.18333333333333332" />
-        <entry key="..\:/Users/HAYAT10/AndroidStudioProjects/ANDROID SYLLABUS/StockProBeta/app/src/main/res/layout/activity_main.xml" value="0.1935185185185185" />
+        <entry key="..\:/Users/HAYAT10/AndroidStudioProjects/ANDROID SYLLABUS/StockProBeta/app/src/main/res/layout/activity_forgot_pin.xml" value="0.33" />
+        <entry key="..\:/Users/HAYAT10/AndroidStudioProjects/ANDROID SYLLABUS/StockProBeta/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Users/HAYAT10/AndroidStudioProjects/ANDROID SYLLABUS/StockProBeta/app/src/main/res/layout/activity_orderlist.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/HAYAT10/AndroidStudioProjects/ANDROID SYLLABUS/StockProBeta/app/src/main/res/layout/activity_passcode.xml" value="0.12" />
+        <entry key="..\:/Users/HAYAT10/AndroidStudioProjects/ANDROID SYLLABUS/StockProBeta/app/src/main/res/layout/activity_passcode.xml" value="0.22" />
         <entry key="..\:/Users/HAYAT10/AndroidStudioProjects/ANDROID SYLLABUS/StockProBeta/app/src/main/res/layout/activity_productlist.xml" value="0.18888888888888888" />
         <entry key="..\:/Users/HAYAT10/AndroidStudioProjects/ANDROID SYLLABUS/StockProBeta/app/src/main/res/layout/activity_purchaselist.xml" value="0.18888888888888888" />
         <entry key="..\:/Users/HAYAT10/AndroidStudioProjects/ANDROID SYLLABUS/StockProBeta/app/src/main/res/layout/activity_report.xml" value="0.22" />
@@ -24,13 +25,20 @@
         <entry key="..\:/Users/HAYAT10/AndroidStudioProjects/ANDROID SYLLABUS/StockProBeta/app/src/main/res/layout/activity_view_stock_list.xml" value="0.18888888888888888" />
         <entry key="..\:/Users/HAYAT10/AndroidStudioProjects/ANDROID SYLLABUS/StockProBeta/app/src/main/res/layout/addproduct.xml" value="0.1935185185185185" />
         <entry key="..\:/Users/HAYAT10/AndroidStudioProjects/ANDROID SYLLABUS/StockProBeta/app/src/main/res/layout/addproduct2.xml" value="0.1935185185185185" />
+        <entry key="..\:/Users/HAYAT10/AndroidStudioProjects/ANDROID SYLLABUS/StockProBeta/app/src/main/res/layout/addproduct_toast.xml" value="0.1" />
         <entry key="..\:/Users/HAYAT10/AndroidStudioProjects/ANDROID SYLLABUS/StockProBeta/app/src/main/res/layout/custom_listview_addpurchase_row.xml" value="0.2" />
         <entry key="..\:/Users/HAYAT10/AndroidStudioProjects/ANDROID SYLLABUS/StockProBeta/app/src/main/res/layout/custom_orderlist.xml" value="0.33" />
         <entry key="..\:/Users/HAYAT10/AndroidStudioProjects/ANDROID SYLLABUS/StockProBeta/app/src/main/res/layout/custom_reportlist.xml" value="0.25" />
         <entry key="..\:/Users/HAYAT10/AndroidStudioProjects/ANDROID SYLLABUS/StockProBeta/app/src/main/res/layout/custom_stocklist.xml" value="0.33" />
+        <entry key="..\:/Users/HAYAT10/AndroidStudioProjects/ANDROID SYLLABUS/StockProBeta/app/src/main/res/layout/custom_toast1.xml" value="0.25" />
         <entry key="..\:/Users/HAYAT10/AndroidStudioProjects/ANDROID SYLLABUS/StockProBeta/app/src/main/res/layout/dashboard_ui.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/HAYAT10/AndroidStudioProjects/ANDROID SYLLABUS/StockProBeta/app/src/main/res/layout/expenselist.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/HAYAT10/AndroidStudioProjects/ANDROID SYLLABUS/StockProBeta/app/src/main/res/layout/product.xml" value="0.1935185185185185" />
+        <entry key="..\:/Users/HAYAT10/AndroidStudioProjects/ANDROID SYLLABUS/StockProBeta/app/src/main/res/layout/toast_addproduct.xml" value="0.25" />
+        <entry key="..\:/Users/HAYAT10/AndroidStudioProjects/ANDROID SYLLABUS/StockProBeta/app/src/main/res/layout/toast_addpurchase.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/HAYAT10/AndroidStudioProjects/ANDROID SYLLABUS/StockProBeta/app/src/main/res/layout/toast_expense.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/HAYAT10/AndroidStudioProjects/ANDROID SYLLABUS/StockProBeta/app/src/main/res/layout/toast_order.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/HAYAT10/AndroidStudioProjects/ANDROID SYLLABUS/StockProBeta/app/src/main/res/layout/toast_report.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/HAYAT10/AndroidStudioProjects/ANDROID SYLLABUS/StockProBeta/app/src/main/res/layout/viewstocklist.xml" value="0.5" />
       </map>
     </option>
