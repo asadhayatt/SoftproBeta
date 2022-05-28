@@ -2,13 +2,16 @@ package com.hayat.stockprobeta;
 
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.snackbar.Snackbar;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -38,6 +41,12 @@ public class PurchaselistActivity extends AppCompatActivity implements DatePicke
     DBHandler dbhandler;
     TextView idtv,remstk;
     String procount,product="", date;
+    String IDD = "" ,  amountt ;
+    EditText   Pramount , Prdate;  //EDittext which iniatialize and edit the order through alert dialog in orderlist.
+    AlertDialog dialog;
+    String PrID , PrAmount ;
+
+
 
     @SuppressLint("WrongViewCast")
     @Override
@@ -70,7 +79,8 @@ public class PurchaselistActivity extends AppCompatActivity implements DatePicke
         });
 
 
-
+        builddialog();
+        loadstocklist();
 
 
     }
@@ -91,6 +101,9 @@ public class PurchaselistActivity extends AppCompatActivity implements DatePicke
               TextView stockID      =   view.findViewById(R.id.stockID);
               TextView Tamount      =   view.findViewById(R.id.Tamount);
               TextView Bdate        =   view.findViewById(R.id.billdate);
+
+
+              Button   editBTN     =   view.findViewById(R.id.editBTN);
               Button   viewBtn     =   view.findViewById(R.id.viewbtn);
 
 
@@ -114,6 +127,32 @@ public class PurchaselistActivity extends AppCompatActivity implements DatePicke
                       Intent intent =new Intent(PurchaselistActivity.this,View_StockList.class);
                       intent.putExtras(bundle);
                       startActivity(intent);
+                  }
+              });
+              editBTN.setOnClickListener(new View.OnClickListener() {
+                  @Override
+                  public void onClick(View v) {
+
+                      TextView PstockID = view.findViewById(R.id.stockID);
+                      TextView Pamount = view.findViewById(R.id.Tamount);
+
+
+                      IDD             = PstockID.getText().toString();
+                      amountt            = Pamount.getText().toString();
+
+
+                      Pramount.setText(amountt);
+
+                      try {
+                          dialog.show();
+                      }
+                      catch (NullPointerException e)
+                      {
+                          e.printStackTrace();
+                      }
+
+
+
                   }
               });
 
@@ -161,4 +200,70 @@ public class PurchaselistActivity extends AppCompatActivity implements DatePicke
             String date  = dayOfMonth+"-"+ m + "-" +year;
         etdate.setText(date);
     }
+
+    private void builddialog() {
+        AlertDialog.Builder builder= new AlertDialog.Builder(this);
+        View view=getLayoutInflater().inflate(R.layout.edit_stock,null);
+
+
+
+        Pramount=view.findViewById(R.id.Pramount);
+
+
+
+
+
+
+        builder.setView(view);
+        builder.setCancelable(false);
+        builder.setPositiveButton("Save", new DialogInterface.OnClickListener()
+        {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                if(TextUtils.isEmpty(Pramount.getText()))
+                {
+                    Pramount.setError("Enter Value");
+                    Pramount.requestFocus();
+                    emptyToast();
+
+                }
+
+                else {
+                    //Storing the edittext data into string.
+
+
+                    PrAmount = Pramount.getText().toString().trim();
+
+
+
+                    //update Order Code
+                    dbhandler.updateStock(PrAmount , IDD);
+
+
+                    Pramount.setText("");
+
+
+                    loadstocklist();
+                    Toast.makeText(PurchaselistActivity.this, "Stock id : "+IDD+" edited", Toast.LENGTH_SHORT).show();
+                }
+
+
+
+
+            }
+        }).setNegativeButton("cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        });
+
+        dialog=builder.create();
+        loadstocklist();
+    }
+    private void emptyToast() {
+        Toast.makeText(PurchaselistActivity.this,"Fields are empty..!", Toast.LENGTH_SHORT).show();
+
+    }
+
 }

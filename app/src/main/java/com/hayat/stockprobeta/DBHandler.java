@@ -1,5 +1,7 @@
 package com.hayat.stockprobeta;
 
+import static com.hayat.stockprobeta.MainActivity.name;
+
 import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
@@ -359,6 +361,34 @@ public class DBHandler  extends SQLiteOpenHelper {
         return id;
     }
 
+    public void updateStock(String Amount , String id)
+    {
+        // on below line we are creating a variable for
+        // our sqlite database and calling writable method
+        // as we are writing data in our database.
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        // on below line we are creating a
+        // variable for content values.
+        ContentValues values = new ContentValues();
+
+        // on below line we are passing all values
+        // along with its key and value pair.
+
+        values.put(BILLAMOUNT_COL, Amount);
+
+
+        // after adding all values we are passing
+        // content values to our table.
+
+        db.update(STOCK_TABLE,values,ID_COL+"="+id,null);
+
+        // at last we are closing our
+        // database after adding database.
+        db.close();
+
+    }
+
     public String create_order(String total, String orderTitle, String contact) {
 
 
@@ -440,6 +470,33 @@ public class DBHandler  extends SQLiteOpenHelper {
         // database after adding database.
         db.close();
     }
+    public void updateOrder(String title , String contact , String amount , String id)
+    {
+        // on below line we are creating a variable for
+        // our sqlite database and calling writable method
+        // as we are writing data in our database.
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        // on below line we are creating a
+        // variable for content values.
+        ContentValues values = new ContentValues();
+
+        // on below line we are passing all values
+        // along with its key and value pair.
+        values.put(ORDER_COL, title);
+        values.put(ORDERCONTACT_COL, contact);
+        values.put(BILLAMOUNT_COL, amount);
+
+
+        // after adding all values we are passing
+        // content values to our table.
+
+        db.update(ORDER_TABLE,values,ID_COL+"="+id,null);
+
+        // at last we are closing our
+        // database after adding database.
+        db.close();
+    }
 
     public void create_stockList(String stockid, String stockName, String rate, String qty, String total) {
 
@@ -491,6 +548,33 @@ public class DBHandler  extends SQLiteOpenHelper {
         // content values to our table.
 
         db.insert(PRODUCT_TABLE, null, values);
+
+        // at last we are closing our
+        // database after adding database.
+        db.close();
+    }
+    public void updateProduct(String name, String salerate, String stock, String des , String id) {
+
+        // on below line we are creating a variable for
+        // our sqlite database and calling writable method
+        // as we are writing data in our database.
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        // on below line we are creating a
+        // variable for content values.
+        ContentValues values = new ContentValues();
+
+        // on below line we are passing all values
+        // along with its key and value pair.
+        values.put(NAME_COL, name);
+        values.put(SRATE_COL, salerate);
+        values.put(STOCK_COL, stock);
+        values.put(DES_COL, des);
+
+        // after adding all values we are passing
+        // content values to our table.
+
+        db.update(PRODUCT_TABLE,values,ID_COL+"="+id,null);
 
         // at last we are closing our
         // database after adding database.
@@ -688,7 +772,7 @@ public class DBHandler  extends SQLiteOpenHelper {
         ArrayList<String> list = new ArrayList<>();
 
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery("select * from " + EXPENSE_TABLE + " WHERE " + ExpenseDate_COL + " like '%" + date + "%'", null);
+        Cursor cursor = db.rawQuery("select * from " + EXPENSE_TABLE + " WHERE " + DATE_COL + " like '%" + date + "%'", null);
         cursor.moveToFirst();
 
 
@@ -769,6 +853,33 @@ public class DBHandler  extends SQLiteOpenHelper {
         // content values to our table.
 
         db.insert(EXPENSE_TABLE, null, values);
+
+        // at last we are closing our
+        // database after adding database.
+        db.close();
+    }
+
+    public void updateExpense(String amount , String Exdate , String ExDes , String id)
+    {
+        // on below line we are creating a variable for
+        // our sqlite database and calling writable method
+        // as we are writing data in our database.
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        // on below line we are creating a
+        // variable for content values.
+        ContentValues values = new ContentValues();
+
+        // on below line we are passing all values
+        // along with its key and value pair.
+        values.put(ExpenseAMOUNT_COL, amount);
+        values.put(ExpenseDate_COL, Exdate);
+        values.put(DES_COL, ExDes);
+
+        // after adding all values we are passing
+        // content values to our table.
+
+        db.update(EXPENSE_TABLE,values,ID_COL+"="+id,null);
 
         // at last we are closing our
         // database after adding database.

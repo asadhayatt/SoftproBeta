@@ -98,7 +98,7 @@
                             android:textSize="12dp" />
 
                         <TextView
-                            android:id="@+id/OContact"
+                            android:id="@+id/OoContact"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:textColor="@color/black"
@@ -161,15 +161,33 @@
 
                     </LinearLayout>
 
-                        <Button
-                            android:id="@+id/viewbtn"
-                            android:layout_width="60dp"
-                            android:layout_height="40dp"
-                            android:layout_gravity="right"
-                            android:text="View"
-                            android:textSize="8sp"
-                            android:gravity="center_vertical|center_horizontal"
-                            />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:orientation="horizontal">
+
+                            <Button
+                                android:id="@+id/editBTN"
+                                android:layout_width="60dp"
+                                android:layout_height="35dp"
+                                android:text="Edit"
+                                android:layout_marginRight="10dp"
+                                android:textSize="8sp"
+                                android:gravity="center_vertical|center_horizontal"
+                                />
+
+                            <Button
+                                android:id="@+id/viewbtn"
+                                android:layout_width="60dp"
+                                android:layout_height="35dp"
+                                android:text="View"
+                                android:textSize="8sp"
+                                android:gravity="center_vertical|center_horizontal"
+                                />
+
+                        </LinearLayout>
+
 
 
                     </LinearLayout>

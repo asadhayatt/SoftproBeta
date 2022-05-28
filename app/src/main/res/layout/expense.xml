@@ -62,8 +62,8 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/amount"
                     android:layout_toRightOf="@+id/prTV"
-                    android:inputType="date"
                     android:hint="DD-MM-YYYY"
+                    android:inputType="date"
 
                     />
 

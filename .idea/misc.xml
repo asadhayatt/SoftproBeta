@@ -32,8 +32,11 @@
         <entry key="..\:/Users/HAYAT10/AndroidStudioProjects/ANDROID SYLLABUS/StockProBeta/app/src/main/res/layout/custom_stocklist.xml" value="0.33" />
         <entry key="..\:/Users/HAYAT10/AndroidStudioProjects/ANDROID SYLLABUS/StockProBeta/app/src/main/res/layout/custom_toast1.xml" value="0.25" />
         <entry key="..\:/Users/HAYAT10/AndroidStudioProjects/ANDROID SYLLABUS/StockProBeta/app/src/main/res/layout/dashboard_ui.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/HAYAT10/AndroidStudioProjects/ANDROID SYLLABUS/StockProBeta/app/src/main/res/layout/expenselist.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/HAYAT10/AndroidStudioProjects/ANDROID SYLLABUS/StockProBeta/app/src/main/res/layout/product.xml" value="0.1935185185185185" />
+        <entry key="..\:/Users/HAYAT10/AndroidStudioProjects/ANDROID SYLLABUS/StockProBeta/app/src/main/res/layout/edit_order.xml" value="0.33" />
+        <entry key="..\:/Users/HAYAT10/AndroidStudioProjects/ANDROID SYLLABUS/StockProBeta/app/src/main/res/layout/edit_stock.xml" value="0.25" />
+        <entry key="..\:/Users/HAYAT10/AndroidStudioProjects/ANDROID SYLLABUS/StockProBeta/app/src/main/res/layout/expense.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/HAYAT10/AndroidStudioProjects/ANDROID SYLLABUS/StockProBeta/app/src/main/res/layout/expenselist.xml" value="0.22" />
+        <entry key="..\:/Users/HAYAT10/AndroidStudioProjects/ANDROID SYLLABUS/StockProBeta/app/src/main/res/layout/product.xml" value="0.33" />
         <entry key="..\:/Users/HAYAT10/AndroidStudioProjects/ANDROID SYLLABUS/StockProBeta/app/src/main/res/layout/toast_addproduct.xml" value="0.25" />
         <entry key="..\:/Users/HAYAT10/AndroidStudioProjects/ANDROID SYLLABUS/StockProBeta/app/src/main/res/layout/toast_addpurchase.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/HAYAT10/AndroidStudioProjects/ANDROID SYLLABUS/StockProBeta/app/src/main/res/layout/toast_expense.xml" value="0.20416666666666666" />

@@ -6,32 +6,16 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_LOG_LEVEL" value="error" />
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="debug" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="966217d8-db15-43ec-bc5a-3c0adcef453d" name="Default Changelist" comment="21-05-2022 2.35pm Project updateed">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/hayat/stockprobeta/forgot_pin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/accept.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/correct.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/expense_toast.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/hint.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_baseline_key_24.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_baseline_security_24.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/order_toast.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/product_toast.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/purchase_toast.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/report_toast.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_forgot_pin.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/toast_addproduct.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/toast_addpurchase.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/toast_create_account.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/toast_expense.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/toast_order.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/toast_report.xml" afterDir="false" />
+    <list default="true" id="966217d8-db15-43ec-bc5a-3c0adcef453d" name="Default Changelist" comment="25/05/2022 project updated">
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/edit_order.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/edit_stock.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.0.2/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.0.2/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.0.2/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.0.2/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.0.2/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.0.2/fileHashes/fileHashes.bin" afterDir="false" />
@@ -42,22 +26,21 @@
       <change beforePath="$PROJECT_DIR$/.gradle/7.0.2/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.0.2/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.0.2/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.0.2/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/app/StockProBeta.app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/StockProBeta.app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hayat/stockprobeta/ADDpurchase.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/hayat/stockprobeta/ADDpurchase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hayat/stockprobeta/Addorder.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/hayat/stockprobeta/Addorder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hayat/stockprobeta/DBHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/hayat/stockprobeta/DBHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hayat/stockprobeta/Dashboard2.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/hayat/stockprobeta/Dashboard2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hayat/stockprobeta/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/hayat/stockprobeta/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hayat/stockprobeta/ReportActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/hayat/stockprobeta/ReportActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hayat/stockprobeta/passcode_Activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/hayat/stockprobeta/passcode_Activity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_passcode.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_passcode.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/dashboard_ui.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/dashboard_ui.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hayat/stockprobeta/OrderlistActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/hayat/stockprobeta/OrderlistActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hayat/stockprobeta/ProductlistActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/hayat/stockprobeta/ProductlistActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hayat/stockprobeta/PurchaselistActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/hayat/stockprobeta/PurchaselistActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hayat/stockprobeta/expenseList.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/hayat/stockprobeta/expenseList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-v21/custom_stocklist.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-v21/custom_stocklist.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_expense_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_expense_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/addproduct2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/addproduct2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/custom_orderlist.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/custom_orderlist.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/custom_stocklist.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/custom_stocklist.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/expense.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/expense.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/expenselist.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/expenselist.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/product.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/product.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,7 +106,7 @@
     <property name="android-custom-viewC:/Users/HAYAT10/AppData/Local/Android/Sdk/sources/android-31/android/widget/DatePicker.java_DatePicker_DIMENSIONS" value="1080&#10;1920" />
     <property name="android-custom-viewC:/Users/HAYAT10/AppData/Local/Android/Sdk/sources/android-31/android/widget/DatePicker.java_SELECTED" value="DatePicker" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/drawable" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
@@ -247,7 +230,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653125784239</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="25/05/2022 project updated">
+      <created>1653484977558</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1653484977558</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -267,6 +257,29 @@
     <MESSAGE value="14-05-2022 Project update" />
     <MESSAGE value="19-05-2022 Project updateed" />
     <MESSAGE value="21-05-2022 2.35pm Project updateed" />
-    <option name="LAST_COMMIT_MESSAGE" value="21-05-2022 2.35pm Project updateed" />
+    <MESSAGE value="25/05/2022 project updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="25/05/2022 project updated" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-method">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/hayat/stockprobeta/Dashboard2.java</url>
+          <line>312</line>
+          <properties class="com.hayat.stockprobeta.Dashboard2" method="addnewprouct">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-method">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/hayat/stockprobeta/DBHandler.java</url>
+          <line>445</line>
+          <properties class="com.hayat.stockprobeta.DBHandler" method="create_orderList">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
